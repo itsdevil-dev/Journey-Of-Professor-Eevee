@@ -1,0 +1,473 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+
+#gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+.entry-content {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+  text-align: center;
+  animation: fadeInUp 1.5s ease-out;
+  
+  
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.cover-img-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.cover-img {
+  width: 70%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+.cover-img-wrapper:hover .cover-img {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.title {
+  font-family: 'Lugrasimo', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #8b2ce2;
+}
+
+.title span {
+  color: #8b2ce2;
+  position: relative;
+  display: inline-block;
+}
+
+
+@keyframes underlineSlide {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(10%); }
+}
+
+.typewriter {
+  color: #5e2f89;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: 'Marcellus', serif;
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+  overflow: hidden;
+  display: inline-block;
+  min-height: 3.5rem;
+  transition: all 0.3s ease;
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.desc {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #8b2ce2, #6a4bff);
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(138, 46, 226, 0.6);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+/* Pulsing glow effect */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(138, 46, 226, 0.6), 0 0 40px rgba(106, 75, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(138, 46, 226, 0.8), 0 0 60px rgba(106, 75, 255, 0.6);
+  }
+}
+
+.start-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+  animation: sparkleTrail 4s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes sparkleTrail {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.5;
+  }
+}
+
+.start-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(106, 75, 255, 0.7);
+}
+
+.start-btn.starting {
+  animation: portalBurst 0.7s forwards;
+}
+
+@keyframes portalBurst {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #8b2ce2);
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 30px #6a4bff);
+  }
+  80% {
+    transform: scale(0.7);
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+
+
+.info-popup-wrapper {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 20;
+}
+
+.info-popup-wrapper i {
+  font-size: 26px;
+  color: #8b2ce2;
+  background: rgba(255, 255, 255, 0);
+  
+  padding: 8px;
+  cursor: pointer;
+  
+}
+
+
+
+
+/* Show popup on hover */
+.info-popup-wrapper:hover #popup-toggle {
+  pointer-events: auto;
+}
+
+/* Show popup when input is checked */
+#popup-toggle:checked ~ .popup-ad {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  z-index: 99;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#popup-toggle:checked ~ .popup-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-ad {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  padding: 30px;
+  border: 3px solid #8b2ce2;
+  border-radius: 16px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+#popup-toggle:checked ~ .popup-ad {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-msg {
+  font-size: 17px;
+  color: #5e2f89;
+  margin-bottom: 20px;
+  font-family: 'Marcellus', serif;
+  line-height: 1.5;
+}
+
+.creator-section {
+  margin-bottom: 20px;
+  position: relative;
+  text-align: left;
+}
+
+.creator-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #8b2ce2;
+  border-left: 4px solid #8b2ce2;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.creator-name {
+  font-size: 20px;
+  font-family: 'Lugrasimo', cursive;
+  color: #6a4bff;
+  padding-left: 10px;
+}
+
+.ok-btn {
+  display: inline-block;
+  background: #8b2ce2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ok-btn:hover {
+  background: #6a4bff;
+  transform: scale(1.05);
+}
+
+#magic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+
+/* Gradient shimmer */
+
+.magical-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 70%),
+              linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  mix-blend-mode: screen;
+  animation: shimmer 15s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sparkling stars canvas */
+#stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
+}
+
+
+
+@media (min-width: 1201px) {
+  .entry-content {
+    padding: 50px;
+    max-width: 70%;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .desc {
+    font-size: 1.2rem;
+  }
+  .cover-img {
+    width: 60%;
+  }
+  .start-btn {
+    padding: 18px 36px;
+    font-size: 1.3rem;
+  }
+}
+
+/* 3. मीडियम डिवाइस (≤1200px) */
+@media (max-width: 1200px) {
+  .entry-content {
+    padding: 40px;
+    max-width: 80%;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .desc {
+    font-size: 1.1rem;
+  }
+  .cover-img {
+    width: 70%;
+  }
+  .start-btn {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+  }
+}
+
+/* 4. छोटे डिवाइस (≤768px) */
+@media (max-width: 768px) {
+  .entry-content {
+    padding: 30px;
+    max-width: 90%;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .desc {
+    font-size: 1rem;
+  }
+  .cover-img {
+    width: 80%;
+  }
+  .start-btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+/* 5. बहुत छोटे डिवाइस (<500px) */
+@media (max-width: 500px) {
+  html {
+    /* अगर क्लैंप ना रखें तो यहाँ छोटा फॉन्ट सैट करें */
+    font-size: 14px;
+  }
+  .entry-content {
+    padding: 20px;
+    max-width: 95%;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .desc {
+    font-size: 0.7rem;
+  }
+  .cover-img {
+    width: 90%;
+  }
+  .start-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 10px;
+  }
+
+  .entry-content {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .desc {
+    font-size: 0.4rem;
+  }
+
+  .cover-img {
+    width: 95%;
+  }
+
+  .start-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .popup-ad {
+    width: 60%;
+    padding: 20px;
+  }
+
+  .popup-msg {
+    font-size: 10px;
+  }
+}
+
