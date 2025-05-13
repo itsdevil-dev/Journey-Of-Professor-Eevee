@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eevee Evolutions Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #f6e6ff, #d0f0ff, #c2f5e9, #fdf6d6);
+  text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 3.5em;
+      margin-bottom: 0;
+      color: #8e24aa;
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, #8e24aa, #ce93d8);
+      left: 0;
+      bottom: -10px;
+      border-radius: 5px;
+      animation: underlineAnimation 2s infinite alternate;
+    }
+
+    @keyframes underlineAnimation {
+      from { width: 50%; left: 25%; }
+      to { width: 100%; left: 0; }
+    }
+
+ img {
+  width: 80%;
+  margin: 50px 0;
+  filter: drop-shadow(0 0 8px #ffe8a3)   /* soft golden glow */
+          drop-shadow(0 0 15px #b3f3ff)  /* gentle cyan mist */
+          drop-shadow(0 0 25px #e0c3fc); /* light lavender shine */
+  transition: transform 1s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+    p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.3em;
+      color: #444;
+      line-height: 1.7em;
+      padding: 0 20px;
+      font-style: italic;
+    }
+
+    .evolution-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .evo-btn {
+      padding: 18px 30px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      text-transform: uppercase;
+      position: relative;
+      transition: all 0.4s ease;
+      font-weight: bold;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .evo-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.1);
+      transform: skewX(-45deg);
+      transition: 0.5s;
+      z-index: 1;
+    }
+
+    .evo-btn:hover::before {
+      left: 100%;
+    }
+
+    .evo-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* === Individual Neon Hover Effects === */
+
+    .vaporeon {
+      background: #2196f3;
+      box-shadow: 0 0 15px #64b5f6;
+    }
+
+    .vaporeon:hover {
+      box-shadow: 0 0 25px 5px #64b5f6, 0 0 40px 10px #2196f3, inset 0 0 10px #64b5f6;
+      transform: translateY(-3px);
+    }
+
+    .jolteon {
+      background: #ffeb3b;
+      color: #000;
+      box-shadow: 0 0 15px #ffee58;
+    }
+
+    .jolteon:hover {
+      box-shadow: 0 0 25px #fff176, 0 0 40px #fdd835, inset 0 0 10px #ffea00;
+      transform: translateY(-3px);
+    }
+
+    .flareon {
+      background: #ff7043;
+      box-shadow: 0 0 15px #ffab91;
+    }
+
+    .flareon:hover {
+      box-shadow: 0 0 30px #ff8a65, 0 0 50px #ff5722, inset 0 0 10px #ff7043;
+      transform: translateY(-3px);
+    }
+
+    .espeon {
+      background: #ce93d8;
+      box-shadow: 0 0 15px #e1bee7;
+    }
+
+    .espeon:hover {
+      box-shadow: 0 0 25px #ba68c8, 0 0 45px #ce93d8, inset 0 0 12px #d1c4e9;
+      transform: translateY(-3px);
+    }
+
+    .umbreon {
+      background: #212121;
+      box-shadow: 0 0 15px #ffca28;
+    }
+
+    .umbreon:hover {
+      box-shadow: 0 0 25px #ffca28, 0 0 50px #fff59d, inset 0 0 10px #ffca28;
+      transform: translateY(-3px);
+    }
+
+    .leafeon {
+      background: #81c784;
+      box-shadow: 0 0 15px #a5d6a7;
+    }
+
+    .leafeon:hover {
+      box-shadow: 0 0 25px #66bb6a, 0 0 40px #a5d6a7, inset 0 0 10px #81c784;
+      transform: translateY(-3px);
+    }
+
+    .glaceon {
+      background: #4dd0e1;
+      box-shadow: 0 0 15px #80deea;
+    }
+
+    .glaceon:hover {
+      box-shadow: 0 0 25px #00bcd4, 0 0 45px #b2ebf2, inset 0 0 10px #4dd0e1;
+      transform: translateY(-3px);
+    }
+
+    .sylveon {
+      background: #f8bbd0;
+      color: #880e4f;
+      box-shadow: 0 0 15px #f48fb1;
+    }
+
+    .sylveon:hover {
+      box-shadow: 0 0 25px #f06292, 0 0 45px #f8bbd0, inset 0 0 10px #f48fb1;
+      transform: translateY(-3px);
+    }
+  .eevee-heading {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  text-align: center;
+  color: #5c2a9d;
+  position: relative;
+
+}
+
+.eevee-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff69b4, #8a2be2, #00bfff);
+  border-radius: 10px;
+  animation: pulseLine 2s infinite;
+}
+
+@keyframes pulseLine {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) scaleX(1.2);
+  }
+}
+
+  .gallery-title {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #ff4081;
+  position: relative;
+}
+
+.gallery-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #ff69b4, #8a2be2);
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 5px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px; /* Thoda kam gap */
+  padding: 0 1rem;
+  justify-items: center;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 250px;
+  height: 80%; /* Fixed height for all images */
+  object-fit: cover; /* Crop image to fill the box */
+  border-radius: 15px;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+.pokedex-card {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fdf4e3;
+  border: 4px solid #f9a825;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  font-family: 'Poppins', sans-serif;
+}
+
+.eevee-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.eevee-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.eevee-img {
+  width: 70%;
+  
+}
+
+
+.info-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ff6f00;
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.info-text p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+.stats-box {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px dashed #ffb300;
+}
+
+.stats-box h3 {
+  color: #f57c00;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.stat-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 0.6rem 1rem;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #555;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+@media (max-width: 600px) {
+  .eevee-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .eevee-img {
+    margin-bottom: 1rem;
+  }
+}
+
+ /* Fun Facts Section */
+.fun-facts-section {
+  position: relative;
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px dashed #ba68c8;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.fun-facts-header {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #8e24aa;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  transform: rotate(-2deg);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fun-facts-header span {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
+}
+
+.fun-facts-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fact-item {
+  position: relative;
+  padding: 0.8rem 1rem;
+  background: #f3e5f5;
+  border-left: 6px solid #ba68c8;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-style: italic;
+  color: #4a148c;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+}
+
+/* Stagger the appearance */
+.fact-item:nth-child(1) { animation-delay: 0.2s; }
+.fact-item:nth-child(2) { animation-delay: 0.4s; }
+.fact-item:nth-child(3) { animation-delay: 0.6s; }
+.fact-item:nth-child(4) { animation-delay: 0.8s; }
+.fact-item:nth-child(5) { animation-delay: 1.0s; }
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hover “pop” effect */
+.fact-item:hover {
+  background: #e1bee7;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+  
+/* Small devices: less than 500px */
+@media (max-width: 31.25rem) {
+  body {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h1::after {
+    height: 0.25rem;
+    bottom: -0.625rem;
+  }
+  img {
+    width: 90%;
+    margin: 2rem 0;
+  }
+  p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .evolution-buttons {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .evo-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+  }
+  .gallery {
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    padding: 0 1rem;
+  }
+  .gallery img {
+    max-width: 80%;
+    height: auto;
+  }
+  .eevee-heading {
+    font-size: 1.5rem;
+  }
+  .gallery-title {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+  }
+  .pokedex-card {
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 95%;
+  }
+  .eevee-info {
+    gap: 1rem;
+  }
+  .eevee-img {
+    width: 80%;
+  }
+  .stat-line {
+    padding: 0.5rem 1rem;
+  }
+  .fun-facts-section {
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 95%;
+  }
+  .fact-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium devices: 600px and up */
+@media (min-width: 37.5rem) {
+  body {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h1::after {
+    height: 0.3125rem;
+    bottom: -0.75rem;
+  }
+  img {
+    width: 85%;
+    margin: 2.5rem 0;
+  }
+  p {
+    font-size: 1.2rem;
+    padding: 0 1.25rem;
+  }
+  .evolution-buttons {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .evo-btn {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+  }
+  .gallery {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  .gallery img {
+    max-width: 90%;
+  }
+  .eevee-heading {
+    font-size: 1.75rem;
+  }
+  .gallery-title {
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1.25rem;
+  }
+  .pokedex-card {
+    padding: 1.5rem;
+    margin: 2.5rem auto;
+    max-width: 90%;
+  }
+  .eevee-info {
+    gap: 1.5rem;
+  }
+  .eevee-img {
+    width: 70%;
+  }
+  .stat-line {
+    padding: 0.75rem 1.25rem;
+  }
+  .fun-facts-section {
+    padding: 1.5rem;
+    margin: 3rem auto;
+    max-width: 90%;
+  }
+  .fact-item {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Large devices: 800px and up */
+@media (min-width: 50rem) {
+  body {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h1::after {
+    height: 0.375rem;
+    bottom: -1rem;
+  }
+  img {
+    width: 75%;
+    margin: 3rem 0;
+  }
+  p {
+    font-size: 1.3rem;
+    padding: 0 1.5rem;
+  }
+  .evolution-buttons {
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .evo-btn {
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 1.25rem;
+  }
+  .gallery {
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+  .gallery img {
+    max-width: 100%;
+  }
+  .eevee-heading {
+    font-size: 2rem;
+  }
+  .gallery-title {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+  }
+  .pokedex-card {
+    padding: 2rem;
+    margin: 3rem auto;
+    max-width: 85%;
+  }
+  .eevee-info {
+    gap: 2rem;
+  }
+  .eevee-img {
+    width: 60%;
+  }
+  .stat-line {
+    padding: 1rem 1.5rem;
+  }
+  .fun-facts-section {
+    padding: 2rem;
+    margin: 4rem auto;
+    max-width: 85%;
+  }
+  .fact-item {
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <h1>Eevee Evolutions Book</h1>
+
+  
+  <img src="images/Eevee/eevee.png" alt="Eevee">
+
+  <p>
+    In the heart of the Pokémon world lies a creature so unique, so filled with potential — that its future is shaped not by fate, but by the bond it shares and the environment around it.  
+    <br><br>
+    This is Eevee — the Evolution Pokémon. With a genetic structure that adapts like no other, Eevee can evolve into forms representing water, fire, electricity, darkness, and even love. The magical stones of evolution and the connection it shares with its trainer carve the path it takes.  
+    <br><br>
+    Welcome to the sacred book of <strong>Eevee Evolutions </strong> — where every page reveals a story of transformation, beauty, and elemental power.
+  </p>
+
+  <h1 class="eevee-heading">Explore Eevee Evolutions</h1>
+
+  <div class="evolution-buttons">
+    <button class="evo-btn vaporeon" onclick="location.href='vaporeon.html'"><span>Vaporeon</span></button>
+    <button class="evo-btn jolteon" onclick="location.href='jolteon.html'"><span>Jolteon</span></button>
+    <button class="evo-btn flareon" onclick="location.href='flareon.html'"><span>Flareon</span></button>
+    <button class="evo-btn espeon" onclick="location.href='espeon.html'"><span>Espeon</span></button>
+    <button class="evo-btn umbreon" onclick="location.href='umbreon.html'"><span>Umbreon</span></button>
+    <button class="evo-btn leafeon" onclick="location.href='leafeon.html'"><span>Leafeon</span></button>
+    <button class="evo-btn glaceon" onclick="location.href='glaceon.html'"><span>Glaceon</span></button>
+    <button class="evo-btn sylveon" onclick="location.href='sylveon.html'"><span>Sylveon</span></button>
+  </div>
+
+  
+  <h2 class="gallery-title">Gallery</h2>
+
+<div class="gallery">  
+  <img src="images/Eevee/1.png" alt="Eevee 1" />  
+  <img src="images/Eevee/2.png" alt="Eevee 2" />  
+  <img src="images/Eevee/3.png" alt="Eevee 3" />  
+  <img src="images/Eevee/4.png" alt="Eevee 4" />  
+  <img src="images/Eevee/5.png" alt="Eevee 5" />  
+  <img src="images/Eevee/6.png" alt="Eevee 6" />  
+  <img src="images/Eevee/7.png" alt="Eevee 7" />  
+  <img src="images/Eevee/8.png" alt="Eevee 8" />  
+</div>
+
+  
+  <section class="pokedex-card">
+  <div class="eevee-info">
+    <div class="eevee-img-wrapper">
+  <img src="images/Eevee/eevee1.png" alt="Eevee" class="eevee-img" />
+</div>
+
+    <div class="info-text">
+      <h2>Eevee</h2>
+      <p><strong>Pokedex Entry:</strong> Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.</p>
+      <p><strong>Type:</strong> Normal</p>
+      <p><strong>Abilities:</strong> Run Away, Adaptability</p>
+      <p><strong>Height:</strong> 0.3 m | <strong>Weight:</strong> 6.5 kg</p>
+    </div>
+  </div>
+
+  <div class="stats-box">
+    <h3>Base Stats</h3>
+    <div class="stat-line"><span>HP</span><span>55</span></div>
+    <div class="stat-line"><span>Attack</span><span>55</span></div>
+    <div class="stat-line"><span>Defense</span><span>50</span></div>
+    <div class="stat-line"><span>Sp. Atk</span><span>45</span></div>
+    <div class="stat-line"><span>Sp. Def</span><span>65</span></div>
+    <div class="stat-line"><span>Speed</span><span>55</span></div>
+  </div>
+</section>
+
+
+  <!-- Fun Facts Section -->
+<div class="fun-facts-section">
+  <div class="fun-facts-header">
+    <span>Fun Facts</span>
+  </div>
+  <div class="fun-facts-list">
+    <div class="fact-item">Sylveon was the very first Fairy-type Pokémon ever revealed!</div>
+    <div class="fact-item">Originally Eevee had only three evolutions planned in Gen I: Vaporeon, Jolteon & Flareon.</div>
+    <div class="fact-item">Leafeon & Glaceon debuted in Sinnoh, evolving near special Moss/Ice Rocks.</div>
+    <div class="fact-item">Espeon and Umbreon evolve by high friendship—daytime for Espeon, nighttime for Umbreon.</div>
+    <div class="fact-item">Umbreon’s rings glow in the moonlight to scare off predators (and trainers too 😉).</div>
+  </div>
+</div>
+  
+  
+  
+  
+<footer style="position: relative; background: transparent; color: #4a148c; text-align: center; padding: 20px 10px; font-family: 'Quicksand', sans-serif; overflow: hidden;">
+
+  <!-- Floating Sparkles -->
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;">
+    <div class="sparkle"></div>
+    <div class="sparkle" style="left: 25%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="left: 75%; animation-delay: 3s;"></div>
+  </div>
+
+  <div style="position: relative; z-index: 1;">
+    <img src="https://img.icons8.com/color/48/pokeball--v1.png" alt="Pokeball" style="width: 30px; margin-bottom: 5px;" />
+    <p style="font-size: 1em; margin: 5px 0;">
+      Made with Love by <strong>Murali</strong>
+    </p>
+    <p style="font-size: 0.8em; color: #6a1b9a; opacity: 0.7; margin: 2px 0;">
+      &copy; 2025 Professor Eevee's Journey , All Copyrights Reserved 
+    </p>
+  </div>
+
+
+  <!-- Sparkles CSS -->
+  <style>
+    .sparkle {
+      position: absolute;
+      top: -20px;
+      left: 10%;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #f06292, 0 0 15px #ba68c8;
+      animation: sparkleMove 5s linear infinite;
+    }
+
+    @keyframes sparkleMove {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(80px) scale(0.7);
+        opacity: 0;
+      }
+    }
+  </style>
+</footer>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sylveon - The Fairy-Type Pokémon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@500&family=Quicksand&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to top left, #ffe6f0, #fce4ec, #f8bbd0);
+      overflow-x: hidden;
+      color: #6a1b9a;
+      position: relative;
+    }
+
+    /* Title */
+    .sylveon-title {
+      font-family: 'Pacifico', cursive;
+      font-size: 4em;
+      text-align: center;
+      margin-top: 40px;
+      background: linear-gradient(90deg, #f8bbd0, #f48fb1, #ce93d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px #f8bbd0;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 20px #f48fb1; }
+      100% { text-shadow: 0 0 40px #ce93d8; }
+    }
+
+    /* Image */
+    .sylveon-image {
+      display: block;
+      margin: 30px auto;
+      width: 250px;
+      filter: drop-shadow(0 0 15px #f48fb1);
+    }
+
+    /* Section */
+    section {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px auto;
+      width: 80%;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px #f8bbd0;
+      transition: transform 0.4s;
+    }
+    section:hover {
+      transform: scale(1.02);
+    }
+ h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  text-align: left;
+  color: #ab47bc;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #ab47bc;
+  border-radius: 2px;
+  transform: scaleX(0.7);
+  transform-origin: bottom left;
+  transition: transform 0.4s ease-in-out;
+}
+
+
+    
+    /* Gallery */
+    .gallery {
+      text-align: center;
+    }
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #f48fb1;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ce93d8;
+    }
+
+    /* Footer Button */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .footer button {
+      background: linear-gradient(to right, #f8bbd0, #f48fb1);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1em;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 30px #f48fb1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .footer button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 50px #f06292;
+    }
+    
+    /* Small devices: less than 500px */
+@media (max-width: 31.25rem) {
+  body { font-size: 0.9rem; }
+  .sylveon-title { font-size: 2.5rem; margin-top: 2rem; }
+  .sylveon-image { width: 8rem; margin: 1.5rem auto; }
+  section { width: 95%; padding: 1rem; margin: 1.25rem auto; }
+  h2 { font-size: 1.5rem; }
+  .gallery img { width: 8rem; margin: 0.625rem; }
+  .footer { padding: 1rem; margin-top: 2rem; }
+  .footer button { padding: 0.75rem 2rem; font-size: 0.9rem; border-radius: 2.5rem; }
+}
+
+/* Medium devices: 600px and up */
+@media (min-width: 37.5rem) {
+  body { font-size: 1rem; }
+  .sylveon-title { font-size: 3.5rem; margin-top: 2.5rem; }
+  .sylveon-image { width: 10rem; margin: 2rem auto; }
+  section { width: 90%; padding: 1.25rem; margin: 1.5rem auto; }
+  h2 { font-size: 1.75rem; }
+  .gallery img { width: 10rem; margin: 0.75rem; }
+  .footer { padding: 1.25rem; margin-top: 2.5rem; }
+  .footer button { padding: 1rem 2.5rem; font-size: 1rem; border-radius: 3rem; }
+}
+
+/* Large devices: 800px and up */
+@media (min-width: 50rem) {
+  body { font-size: 1.1rem; }
+  .sylveon-title { font-size: 4rem; margin-top: 3rem; }
+  .sylveon-image { width: 12.5rem; margin: 2.5rem auto; }
+  section { width: 80%; padding: 1.5rem; margin: 2rem auto; }
+  h2 { font-size: 2rem; }
+  .gallery img { width: 12.5rem; margin: 1rem; }
+  .footer { padding: 1.5rem; margin-top: 3rem; }
+  .footer button { padding: 1.25rem 3rem; font-size: 1.1rem; border-radius: 3.125rem; }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Fairy sparkles -->
+
+  <h1 class="sylveon-title">Sylveon</h1>
+  <img src="images/sylveon/sylveon.png" alt="Sylveon" class="sylveon-image"/>
+
+  <section>
+    <h2>About Sylveon</h2>
+    <p>
+      Sylveon is a Fairy-type Pokémon known for its elegant ribbons and soothing presence.
+      It's a symbol of love and companionship, capable of calming even the most aggressive Pokémon.
+      Sylveon is very delicate and adorable – when it twirls its ribbons, it captures everyone's heart! 💖
+    </p>
+  </section>
+
+  <section>
+    <h2>Stats</h2>
+    <ul>
+      <li><strong>HP :</strong> 95</li>
+      <li><strong>Attack :</strong>65</li>
+      <li><strong>Defense :</strong> 65</li>
+      <li><strong>Sp. Atk :</strong> 110</li>
+      <li><strong>Sp. Def :</strong> 130</li>
+      <li><strong>Speed :</strong>60</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Fairy Aura</h2>
+    <p>
+      Sylveon has a mystical aura that spreads joy and warmth.
+      Its ribbons are more than decorative—they are filled with life energy that connects emotionally with others.
+      When you see it, your heart will be filled with joy! ✨
+    </p>
+  </section>
+
+  <section>
+    <h2>Training Tips</h2>
+    <p>
+      Sylveon shines best in battle with special moves.
+      Use moves like Moonblast, Draining Kiss, and Calm Mind to take advantage of its magical abilities and high special defense.
+      See the Trainer Bond section to learn how you can build trust and gain an edge in battle.
+    </p>
+  </section>
+
+  <section>
+  <h2>Sylveon's Moves</h2>
+  <ul>
+    <li><strong>Moonblast</strong> – Powerful Fairy blast with chance to lower enemy Sp. Atk</li>
+    <li><strong>Draining Kiss</strong> – Heals user while damaging opponent</li>
+    <li><strong>Calm Mind</strong> – Boosts Sp. Atk &amp; Sp. Def</li>
+    <li><strong>Psyshock</strong> – Hits target’s Defense instead of Sp. Def</li>
+    <li><strong>Hyper Voice</strong> – Strong Normal move, good coverage</li>
+  </ul>
+</section>
+
+  <section>
+    <h2>Habitat &amp; Behavior</h2>
+    <p>
+      Sylveon prefers serene forests and flower-filled meadows.
+      It mostly lives in serene locations with abundant natural beauty.
+      Trainers should train it in a calm environment to strengthen their bond.
+    </p>
+  </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="images/sylveon/sylveon1.png" alt="Sylveon Art 1"/>
+      <img src="images/sylveon/sylveon2.png" alt="Sylveon Art 2"/>
+      <img src="images/sylveon/sylveon3.png" alt="Sylveon Art 3"/>
+      <img src="images/sylveon/sylveon4.png" alt="Sylveon Art 4"/>
+    </div>
+  </section>
+
+  <section>
+    <h2>Fun Facts</h2>
+    <ul>
+      <li>Sylveon's name is inspired by the French phrase <em>"s’il vous plaît"</em>, which means “please”.</li>
+      <li>Its ribbons can sense emotions – when you are feeling sad, it cheers you up!</li>
+      <li>The bond between Sylveon and Eevee is unique – Eevee only evolves with a special friendship.</li>
+    </ul>
+  </section>
+
+  <div class="footer">
+    <button onclick="location.href='main.html'">
+      Explore Eevee Evolutions
+    </button>
+  </div>
+  <canvas id="fairy-canvas" style="position: fixed; top: 0; left: 0; z-index: -9999; pointer-events: none;"></canvas>
+<script>
+  const canvas = document.getElementById('fairy-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.style.position = 'fixed';
+  canvas.style.top = 0;
+  canvas.style.left = 0;
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '-9999';
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const stars = [];
+
+  function createStar() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const size = Math.random() * 5 + 4;
+    const life = 80 + Math.random() * 60;
+    const opacity = 1;
+    const rotation = Math.random() * Math.PI;
+    stars.push({ x, y, size, life, opacity, rotation });
+  }
+
+  function drawStar(x, y, r, rotation, opacity) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rotation);
+    ctx.beginPath();
+    for (let i = 0; i < 5; i++) {
+      ctx.lineTo(0, r);
+      ctx.translate(0, r);
+      ctx.rotate((Math.PI * 2) / 10);
+      ctx.lineTo(0, -r);
+      ctx.translate(0, -r);
+      ctx.rotate(-((Math.PI * 6) / 10));
+    }
+    ctx.closePath();
+    ctx.fillStyle = `rgba(255, 182, 255, ${opacity})`;
+    ctx.shadowColor = `rgba(255, 192, 255, ${opacity})`;
+    ctx.shadowBlur = 10;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = stars.length - 1; i >= 0; i--) {
+      const s = stars[i];
+      drawStar(s.x, s.y, s.size, s.rotation, s.opacity);
+      s.life--;
+      s.opacity -= 0.01;
+      if (s.life <= 0 || s.opacity <= 0) {
+        stars.splice(i, 1);
+      }
+    }
+  }
+
+  function loop() {
+    if (Math.random() < 0.3) {
+      createStar();
+    }
+    drawStars();
+    requestAnimationFrame(loop);
+  }
+
+  loop();
+</script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaporeon - Water Type Pokémon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Ubuntu', sans-serif; }
+    html, body { height: 100%; overflow-x: hidden; background: linear-gradient(135deg, #7fdbda, #70c1b3, #48b1bf, #3a6073); color: #033e5b; font-size: 1rem; }
+    header { background: transparent; padding: 2vh 1rem; text-align: center; position: relative; }
+    header h1 { color: #fff; font-size: clamp(1.5rem, 5vw, 3rem); letter-spacing: 3px; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; animation: float 3s ease-in-out infinite; }
+    header h1::after { content: ''; display: block; height: 4px; width: 60%; background: linear-gradient(to right, #00f0ff, #fff, #00f0ff); margin: 12px auto 0; border-radius: 999px; box-shadow: 0 0 8px #00f0ff; }
+    @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }/* Wave Animation */
+
+.container { padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+.img-container { position: relative; display: inline-block; }
+.vaporeon-img { width: clamp(220px, 50vw, 300px); transition: transform 0.6s ease; filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 16px #00f0ff) drop-shadow(0 0 24px #00f0ff); z-index: 2; cursor: pointer; }
+.vaporeon-img:hover { transform: scale(1.1) rotate(2deg); }
+.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple-animation 0.6s linear; background: rgba(255,255,255,0.7); pointer-events: none; }
+@keyframes ripple-animation { to { transform: scale(4); opacity: 0; } }
+
+.card, .extra-section { background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); max-width: 90%; text-align: center; backdrop-filter: blur(10px); border: 2px solid #74c0fc; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.extra-section { background: rgba(255, 255, 255, 0.7); border: 2px dashed #48cae4; text-align: left; }
+.card.visible, .extra-section.visible { opacity: 1; transform: translateY(0); }
+.card h2, .extra-section h3 { margin-bottom: 1rem; color: #0077b6; font-size: clamp(1.3rem, 4vw, 2rem); }
+.card p, .extra-section p, .extra-section ul { line-height: 1.6; font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
+
+.stats-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; padding: 0; }
+.stats-list li { background: #00f0ff; color: #fff; padding: 0.6rem 1rem; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+.gallery { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+.gallery img { width: 150px; margin: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,240,255,0.5); transition: transform 0.3s, box-shadow 0.3s; }
+.gallery img:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(0,240,255,0.8); }
+
+.redirect-btn { margin-top: 2rem; padding: 0.8rem 2rem; font-size: clamp(1rem, 2.5vw, 1.2rem); background: #00b4d8; color: white; border: none; border-radius: 30px; cursor: pointer; transition: 0.3s ease; }
+.redirect-btn:hover { background: #0096c7; transform: scale(1.05); }
+.abilities-section, .moves-section {
+  background: rgba(255, 255, 255, 0.65);
+  padding: 1.5rem 2rem;
+  margin-top: 1.5rem;
+  border-left: 6px solid #00b4d8;
+  border-radius: 12px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.abilities-section h3, .moves-section h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  margin-bottom: 1rem;
+  color: #0077b6;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.abilities-section ul, .moves-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.abilities-section li, .moves-section li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #055e72;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.star {
+  color: #00b4d8;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+.bubble { position: fixed; bottom: -60px; border-radius: 50%; animation: rise 12s ease-in infinite; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 2s ease-out; }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 0.4; } 50% { opacity: 0.8; } 80% { opacity: 0.4; } 100% { transform: translateY(-120vh); opacity: 0; } }
+
+/* Small devices: less than 500px */
+@media (max-width: 31.25rem) {
+  html { font-size: 0.9rem; }
+  header { padding: 1.5rem 1rem; }
+  header h1 { font-size: 2rem; letter-spacing: 2px; }
+  .container { padding: 1rem 0.5rem; gap: 1rem; }
+  .vaporeon-img { width: 50%; }
+  .card, .extra-section {
+    max-width: 95%;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .card h2, .extra-section h3 { font-size: 1.5rem; }
+  .card p, .extra-section p, .extra-section ul { font-size: 0.9rem; }
+  .abilities-section, .moves-section { width: 95%; padding: 1rem; margin-top: 1rem; }
+  .stats-list li { padding: 0.4rem 0.8rem; }
+  .gallery img { width: 8rem; margin: 0.5rem; }
+  .redirect-btn { padding: 0.5rem 1.5rem; font-size: 0.9rem; }
+  .bubble { bottom: -4rem; }
+}
+
+/* Medium devices: 600px and up */
+@media (min-width: 37.5rem) {
+  html { font-size: 1rem; }
+  header { padding: 2vh 1rem; }
+  header h1 { font-size: clamp(2.5rem,5vw,3rem); }
+  .container { padding: 1.5rem 1rem; gap: 1.5rem; }
+  .vaporeon-img { width: clamp(200px,45vw,280px); }
+  .card, .extra-section {
+    max-width: 90%;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+  .card h2, .extra-section h3 { font-size: clamp(1.8rem,3.5vw,2rem); }
+  .card p, .extra-section p, .extra-section ul { font-size: clamp(1rem,2vw,1.05rem); }
+  .abilities-section, .moves-section { width: 90%; padding: 1.25rem 1.5rem; }
+  .stats-list li { padding: 0.5rem 1rem; }
+  .gallery img { width: 10rem; margin: 0.75rem; }
+  .redirect-btn { padding: 0.75rem 2rem; font-size: clamp(1rem,2.5vw,1.1rem); }
+  .bubble { bottom: -5rem; }
+}
+
+/* Large devices: 800px and up */
+@media (min-width: 50rem) {
+  html { font-size: 1.1rem; }
+  header { padding: 3vh 1rem; }
+  header h1 { font-size: clamp(3rem,6vw,4rem); }
+  .container { padding: 2rem 1rem; gap: 2rem; }
+  .vaporeon-img { width: clamp(220px,50vw,300px); }
+  .card, .extra-section {
+    max-width: 80%;
+    padding: 2rem;
+    border-radius: 1.5rem;
+  }
+  .card h2, .extra-section h3 { font-size: clamp(2rem,4vw,2.5rem); }
+  .card p, .extra-section p, .extra-section ul { font-size: clamp(1.05rem,2.5vw,1.2rem); }
+  .abilities-section, .moves-section { width: 85%; padding: 1.5rem 2rem; }
+  .stats-list li { padding: 0.6rem 1.2rem; }
+  .gallery img { width: 12rem; margin: 1rem; }
+  .redirect-btn { padding: 1rem 2.5rem; font-size: clamp(1.1rem,3vw,1.3rem); }
+  .bubble { bottom: -6rem; }
+}
+
+@media (max-width: 480px) { .card, .extra-section { padding: 1rem; } .redirect-btn { width: 100%; } }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vaporeon - The Bubble Jet Pokémon</h1>
+
+  </header>
+  <div class="container">
+    <div class="img-container">
+      <img src="images/vaporeon/vaporeon.png" alt="Vaporeon" class="vaporeon-img" />
+    </div><div class="card fade-in">
+  <h2>About Vaporeon</h2>
+  <p>Vaporeon is a Water-type Pokémon introduced in Generation I. It evolves from Eevee when exposed to a Water Stone. With its sleek blue body, fish-like tail, and flowing fins, Vaporeon thrives in aquatic environments.</p>
+  <p>It can melt into water, making it nearly invisible. Vaporeon is admired for its high HP, strong Water-type moves, and its graceful presence.</p>
+</div>
+
+<div class="card fade-in">
+  <h2>Stats</h2>
+  <ul class="stats-list">
+    <li>HP: 130</li><li>Attack: 65</li><li>Defense: 60</li>
+    <li>Sp. Atk: 110</li><li>Sp. Def: 95</li><li>Speed: 65</li>
+  </ul>
+</div>
+
+<div class="extra-section fade-in">
+
+  <h3>Abilities</h3>
+  <ul>
+    <li><span class="star">★</span> Water Absorb - Heals Vaporeon when hit by Water-type moves.</li>
+    <li><span class="star">★</span> Hydration (Hidden Ability) - Heals status conditions in rain.</li>
+  </ul>
+
+
+
+</div>
+
+<div class="extra-section fade-in">
+  
+  <h3>Top Moves</h3>
+  <ul>
+    <li><span class="star">★</span> Hydro Pump - A powerful water cannon blast.</li>
+    <li><span class="star">★</span> Surf - A wave of water crashes down on the foe.</li>
+    <li><span class="star">★</span> Ice Beam - Freezes enemies with chilling precision.</li>
+    <li><span class="star">★</span> Acid Armor - Sharply boosts Vaporeon's defense by liquefying its body.</li>
+  </ul>
+
+</div>
+
+<div class="extra-section fade-in">
+  <h3>Habitat & Behavior</h3>
+  <p>Prefers calm lakes and deep seas. Often seen surfing ocean waves alongside trainers. Its body can refract light, making it appear invisible from above water.</p>
+</div>
+
+<div class="card fade-in">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="images/vaporeon/vaporeon1.png" alt="Vaporeon Art 1"/>
+    <img src="images/vaporeon/vaporeon2.png" alt="Vaporeon Art 2"/>
+    <img src="images/vaporeon/vaporeon3.png" alt="Vaporeon Art 3"/>
+    <img src="images/vaporeon/vaporeon4.png" alt="Vaporeon Art 4"/>
+  </div>
+</div>
+
+<div class="extra-section fade-in">
+  <h3>Fun Facts</h3>
+  <ul>
+    <li>Vaporeon’s fins can change shape to mimic aquatic plants for camouflage.</li>
+    <li>It can create miniature water clones to dodge attacks.</li>
+    <li>Legends say it guided sailors safely to shore in stormy seas.</li>
+  </ul>
+</div>
+
+<button class="redirect-btn fade-in" onclick="window.location.href='main.html'">Explore Eevee Evolutions</button>
+
+  
+
+  <script>
+    // Ripple effect
+    const img = document.querySelector('.vaporeon-img');
+    img.addEventListener('click', function(e) {
+      const rect = img.getBoundingClientRect();
+      const circle = document.createElement('span');
+      circle.classList.add('ripple');
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      circle.style.width = circle.style.height = '50px';
+      circle.style.left = `${x - 25}px`;
+      circle.style.top = `${y - 25}px`;
+      img.parentElement.appendChild(circle);
+      setTimeout(() => circle.remove(), 600);
+    });
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(fader => observer.observe(fader));
+
+    // Bubble animation
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      const size = Math.random() * 30 + 20;
+      bubble.classList.add('bubble');
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * window.innerWidth}px`;
+      bubble.style.animationDuration = `${10 + Math.random() * 10}s`;
+      bubble.style.animationDelay = `${Math.random() * 10}s`;
+      bubble.style.filter = `blur(1px) drop-shadow(0 0 1px rgba(255,255,255,0.3))`;
+      bubble.style.background = `radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) 70%)`;
+      document.body.appendChild(bubble);
+    }
+      </script>
+    </body>
+</html>

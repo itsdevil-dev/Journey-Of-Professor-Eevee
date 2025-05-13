@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jolteon - The Electric Pokémon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Playfair+Display:wght@600&family=Creepster&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="jolteon.css" />
+</head>
+<body>
+  <div class="lightning-bg"></div>
+
+  <header>
+    <div class="glitch" data-glitch="Jolteon">Jolteon</div>
+  </header>
+
+  <div class="img-container">
+    <img class="jolteon-img" src="images/jolteon/jolteon.png" alt="Jolteon">
+  </div>
+
+  <main>
+    <section id="about" class="fade-in">
+      <h2>About</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Jolteon is an Electric-type Pokémon introduced in Generation 1. It evolves from Eevee when exposed to a Thunder Stone. Known for its lightning speed and shocking power, Jolteon channels electricity with incredible force.</p>
+          <p>Its power goes beyond 10,000 volts! With moves like Thunderbolt, Pin Missile, and Volt Switch, it can shake up any battle with style.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="moves" class="slide-up">
+      <h2>Signature Moves</h2>
+      <div class="moves-grid">
+        <div class="move-card">
+          <h3>⚡ Thunderbolt</h3>
+          <p>A strong electric blast hits the target. It may cause paralysis.</p>
+        </div>
+        <div class="move-card">
+          <h3>📌 Pin Missile</h3>
+          <p>Fires sharp pins quickly at the enemy, hitting multiple times.</p>
+        </div>
+        <div class="move-card">
+          <h3>🔄 Volt Switch</h3>
+          <p>The user attacks, then quickly switches with another party Pokémon.</p>
+        </div>
+        <div class="move-card">
+          <h3>🌟 Thunder</h3>
+          <p>A powerful thunderbolt strikes the target. May leave them paralyzed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="pop-in">
+      <h2>Stats</h2>
+      <div class="stat"><span class="stat-name">HP</span><span class="stat-value">65</span></div>
+      <div class="stat"><span class="stat-name">Attack</span><span class="stat-value">65</span></div>
+      <div class="stat"><span class="stat-name">Defense</span><span class="stat-value">60</span></div>
+      <div class="stat"><span class="stat-name">Sp. Attack</span><span class="stat-value">110</span></div>
+      <div class="stat"><span class="stat-name">Sp. Defense</span><span class="stat-value">95</span></div>
+      <div class="stat"><span class="stat-name">Speed</span><span class="stat-value">130</span></div>
+    </section>
+
+    <section id="gallery" class="fade-in">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="images/jolteon/jolt1.jpg" alt="Jolteon running" />
+        <img src="images/jolteon/jolt2.jpg" alt="Jolteon in lightning" />
+        <img src="images/jolteon/jolt3.jpg" alt="Jolteon portrait" />
+        <img src="images/jolteon/jolt4.jpg" alt="Jolteon silhouette" />
+      </div>
+    </section>
+
+    <section id="fun-facts" class="slide-up">
+      <h2>Fun Facts</h2>
+      <ul>
+        <li>Jolteon's fur can rise up like a lightning rod to store electricity.</li>
+        <li>In the wild, it prefers living near cliffs where thunderstorms are frequent.</li>
+        <li>Just seeing Jolteon makes trainers' hearts race with excitement!</li>
+      </ul>
+    </section>
+
+    <section id="trainer-tips" class="pop-in">
+      <h2>Trainer Tips</h2>
+      <ol>
+        <li>Use speed-boosting moves to strike before your opponent.</li>
+        <li>Keep healing berries to recover from bad status conditions.</li>
+        <li>Team up with Ground-type Pokémon to cover Electric-type weaknesses.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <button id="redirect-btn" onclick="redirectToEevee()">See All Eevee Evolutions</button>
+  </footer>
+
+  <script>
+    function redirectToEevee() {
+      window.location.href = 'main.html';
+    }
+
+    const sections = document.querySelectorAll('section');
+    const options = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>

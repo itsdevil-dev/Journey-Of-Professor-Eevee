@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flareon - The Fire Pokémon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500&family=Rock+Salt&family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            background: radial-gradient(circle at top left, #ffae00, #ff5722);
+            overflow-x: hidden;
+            animation: bgPulse 10s infinite alternate;
+        }
+        @keyframes bgPulse {
+            from { background-position: 0% 0%; }
+            to { background-position: 100% 100%; }
+        }
+        .fire-header {
+            text-align: center;
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: #ffeb3b;
+            padding: 30px 10px 10px;
+            text-shadow: 0 0 10px #ff6f00, 0 0 20px #ff5722;
+            animation: fireFlicker 1s infinite alternate;
+        }
+        @keyframes fireFlicker {
+            from {
+                text-shadow: 0 0 10px #ff6f00, 0 0 20px #ff5722;
+            }
+            to {
+                text-shadow: 0 0 15px #ff9800, 0 0 30px #ffc107;
+            }
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .flareon-image {
+            display: block;
+            margin: 30px auto;
+            max-width: 300px;
+            filter: drop-shadow(0 0 15px #ff5722) drop-shadow(0 0 30px #ff9800);
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .section-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 204, 0, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 15px rgba(255, 160, 0, 0.3);
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .section-box h2 {
+            color: #ffd54f;
+            border-bottom: 1px solid #ffb300;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        .section-box p, .section-box ul, .section-box td {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #fff3e0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ffcc80;
+        }
+        th {
+            color: #ffb300;
+            text-align: left;
+        }
+        .move-list {
+            list-style: disc inside;
+            margin-top: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+            transition: transform 0.3s, filter 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+        .eevee-btn {
+            display: block;
+            margin: 40px auto;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            color: #fff;
+            background: linear-gradient(45deg, #ff7043, #ff8f00);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff6f00;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .eevee-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ffa726;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #fff3e0;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(6px);
+            font-size: 0.9rem;
+        }
+        /* Small devices: less than 500px */
+@media (max-width: 500px) {
+  body {
+    font-size: 0.9em;
+  }
+  .fire-header {
+    font-size: 2.5rem;
+    padding: 20px 5px 5px;
+  }
+  .container {
+    padding: 10px;
+  }
+  .flareon-image {
+    max-width: 200px;
+    margin: 20px auto;
+  }
+  .section-box {
+    padding: 15px;
+    margin: 20px 0;
+  }
+  .section-box h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .section-box p, .section-box ul, .section-box td {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  table th, table td {
+    padding: 8px;
+  }
+  .gallery {
+    gap: 10px;
+  }
+  .eevee-btn {
+    padding: 8px 20px;
+    font-size: 1rem;
+    margin: 30px auto;
+  }
+  footer {
+    padding: 15px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Medium devices: 600px and up */
+@media (min-width: 600px) {
+  body {
+    font-size: 1em;
+  }
+  .fire-header {
+    font-size: 3.5rem;
+    padding: 25px 10px 10px;
+  }
+  .container {
+    padding: 15px;
+  }
+  .flareon-image {
+    max-width: 260px;
+    margin: 25px auto;
+  }
+  .section-box {
+    padding: 20px;
+    margin: 25px 0;
+  }
+  .section-box h2 {
+    font-size: 1.6rem;
+  }
+  .section-box p, .section-box ul, .section-box td {
+    font-size: 1rem;
+  }
+  .gallery {
+    gap: 12px;
+  }
+  .eevee-btn {
+    padding: 10px 25px;
+    font-size: 1.05rem;
+  }
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
+/* Large devices: 800px and up */
+@media (min-width: 800px) {
+  body {
+    font-size: 1.1em;
+  }
+  .fire-header {
+    font-size: 4rem;
+    padding: 30px 10px 10px;
+  }
+  .container {
+    padding: 20px;
+  }
+  .flareon-image {
+    max-width: 300px;
+    margin: 30px auto;
+  }
+  .section-box {
+    padding: 25px;
+    margin: 30px 0;
+  }
+  .section-box h2 {
+    font-size: 1.8rem;
+  }
+  .section-box p, .section-box ul, .section-box td {
+    font-size: 1.05rem;
+  }
+  .gallery {
+    gap: 15px;
+  }
+  .eevee-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+  footer {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fire-header">Flareon</div>
+        <img class="flareon-image" src="images/flareon/flareon.png" alt="Flareon">
+
+        <div class="section-box">
+            <h2>About Flareon</h2>
+            <p>Flareon is a Fire-type Pokémon known for its flame-colored fur and intense internal heat. It evolves from Eevee when exposed to a Fire Stone. Flareon can raise its body temperature to over 1,600°F (870°C) and release intense fire attacks during battle. It’s both fierce and fiercely loyal.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>Habitat & Behavior</h2>
+            <p>Flareon prefers dry, rocky areas where it can bask in the sun to build its internal flames. It tends to be solitary but will fiercely defend its territory. When calm, Flareon’s fur glows softly, illuminating dark caves.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>Abilities & Moves</h2>
+            <table>
+                <tr><th>Ability</th><td>Flash Fire / Guts</td></tr>
+                <tr><th>Hidden Ability</th><td>Flare Boost</td></tr>
+            </table>
+            <ul class="move-list">
+                <li>Ember – A basic burst of fire.</li>
+                <li>Flamethrower – Intense fire attack.</li>
+                <li>Fire Spin – Traps opponent in a vortex of flames.</li>
+                <li>Heat Wave – Sends scorching waves at all foes.</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h2>Weakness & Resistance</h2>
+            <table>
+                <tr><th>Weak To</th><td>Water, Rock, Ground</td></tr>
+                <tr><th>Resistant To</th><td>Fire, Grass, Ice, Bug, Steel, Fairy</td></tr>
+            </table>
+        </div>
+
+        <div class="section-box">
+            <h2>Fun Facts</h2>
+            <ul class="move-list">
+                <li>Flareon’s internal flame is so hot it can melt rocks.</li>
+                <li>Its fur can flare brighter than the sun for a few seconds.</li>
+                <li>Flareon’s vivid orange coat helps it blend into volcanic landscapes.</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h2>Trainer’s Tips</h2>
+            <p>Pair Flareon with a Water-type ally to cover its weaknesses. Use Sunny Day to boost its Fire moves and make Ember and Flamethrower even more powerful. Keep an eye on Rock-type opponents—they can hit hard!</p>
+        </div>
+
+        <div class="section-box">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="images/flareon/fl1.png" alt="Flareon in battle">
+                <img src="images/flareon/fl2.png" alt="Flareon resting">
+                <img src="images/flareon/fl3.png" alt="Flareon portrait">
+                <img src="images/flareon/fl4.png" alt="Flareon at sunset">
+            </div>
+        </div>
+
+        <button class="eevee-btn" onclick="window.location.href='main.html'">Explore Eevee Evolutions 🔥</button>
+    </div>
+
+    <footer>
+        &copy; 2025 All Rights Reserved | Made with ❤️ by Murali
+    </footer>
+</body>
+</html>
