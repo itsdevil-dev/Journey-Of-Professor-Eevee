@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chapter6: The Locket and the Legend </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lugrasimo">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+        .chapter-container {
+            max-width: 90%;
+            margin: 60px auto;
+            padding: 30px 25px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: fadeIn 1.2s ease-out;  
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .chapter-image,
+.inline-img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: floaty 6s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.chapter-image:hover,
+.inline-img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 60px #E57373;
+}
+
+/* Subtle floating animation */
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+        .pokemon-img {
+            width: 120px;
+            margin: 10px 0;
+        }
+      .sugar-img {
+    display: block;
+    margin: 20px auto; /* centers the image horizontally */
+    width: 70%;
+    max-width: 500px;
+    height: 70%;
+    border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.sugar-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+        .chapter-text {
+            font-size: 1.15rem;
+            color: black;
+            font-family: 'Marcellus', serif;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+        .name {
+            font-weight: bold;
+            
+        }
+ .name.professor-eevee {
+    background: linear-gradient(to right, #00b4db, #0083b0); /* Ocean blue magic */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.team-shadow-vortex-leader {
+    background: #8e2de2; /* Purple storm */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.team-shadow-vortex-commander {
+    background: linear-gradient(to right, #e52d27, #b31217); /* Crimson command */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.grunt-i,
+.name.grunt-ii,
+.name.grunt-iii {
+    background: black; /* Shadow operative */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.lieutenant-nocturne {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Midnight cloak */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.officer-jenny {
+    background: linear-gradient(to right, #11998e, #38ef7d); /* Emerald badge */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.name.dr-mira {
+    background: linear-gradient(to right, #f7971e, #ffd200); /* Golden healer */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.researcher-kai {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Electric insight */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+   .name.staryu {
+    color: #40E0D0; /* Turquoise-like, matches its Water-type energy */
+}
+.name.onix {
+    color: #708090; /* Slate Gray, gives a rocky, sturdy feel */
+}
+    
+    .name.nurse-joy {
+        color: pink;
+    }
+.name.trainer-red {
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Fiery spirit */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.charizard {
+    background: linear-gradient(to right, #fe8c00, #e52d27); /* Flame roar */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.dragonite {
+    background: linear-gradient(to right, #a8c0ff, #3f2b96); /* Sky guardian */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.ninetales {
+    background: linear-gradient(to right, #f8ffae, #43c6ac); /* Mystic ember */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.gardevoir {
+    background: linear-gradient(to right, #7f00ff, #e100ff); /* Psychic grace */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    .name.misty { 
+        color: blue;
+    }
+    .name.brock {
+        color: grey;
+    }
+.name.gengar {
+    background: linear-gradient(to right, #654ea3, #eaafc8); /* Shadow grin */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.eevee {
+    background: transparent;
+    color: cyan;
+}
+    
+
+
+    .name.euvee {
+        color: #B388EB;
+    }
+        .title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #B388EB; /* Soft magical lavender */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    animation: titleFadeIn 2s ease-in-out both;
+    text-shadow: 0 2px 15px rgba(179, 136, 235, 0.8);
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.title span {
+    position: relative;
+    display: inline-block;
+    padding: 0 14px;
+}
+
+.title span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 4px;
+    background: linear-gradient(to right, #c471ed, #f64f59); /* Magical pink to warm violet */
+    border-radius: 6px;
+    animation: underlineGlow 3s ease-in-out infinite alternate;
+    box-shadow: 0 0 12px rgba(255, 128, 255, 0.6);
+}
+
+/* Animation Keyframes */
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes underlineGlow {
+    0% {
+        box-shadow: 0 0 6px rgba(196, 113, 237, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 18px rgba(246, 79, 89, 0.9);
+    }
+}
+        .skip-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 999;
+            color: black;
+            transition: color 0.3s ease;
+        }
+        .skip-icon:hover {
+            color: cyan;
+        }
+
+  .nav-buttons {
+  display: none;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto 0;
+  perspective: 800px; /* for 3D tilt */
+}
+
+.nav-button {
+  --base-color: #ffffff;
+  --accent1: #ff9a9e;
+  --accent2: #fad0c4;
+  position: relative;
+  padding: 14px 30px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #333;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  min-width: 120px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* Left/Right alternate accents */
+.nav-button.left  { --accent1: #a18cd1; --accent2: #fbc2eb; }
+.nav-button.right { --accent1: #84fab0; --accent2: #8fd3f4; }
+
+/* gradient fill beneath */
+.nav-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 0.5s ease;
+  z-index: -1;
+}
+
+/* shining sweep */
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: rgba(255,255,255,0.4);
+  transform: rotate(45deg) translateX(-100%);
+  transition: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* hover: fill, shine, tilt */
+.nav-button:hover {
+  clip-path: none;
+  transform: rotateX(8deg) rotateY(-8deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.nav-button:hover::after {
+  clip-path: circle(150% at 50% 50%);
+}
+
+.nav-button:hover::before {
+  opacity: 1;
+  animation: shine 0.8s ease-out forwards;
+}
+
+@keyframes shine {
+  to { transform: rotate(45deg) translateX(100%); opacity: 0; }
+}
+
+    
+html {
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+@media (min-width: 1201px) {
+  .chapter-container {
+    margin: 80px auto;
+    padding: 40px 35px;
+    max-width: 70%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 80%;
+    max-width: 600px;
+  }
+  .chapter-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  .pokemon-img {
+    width: 140px;
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+  .skip-icon {
+    font-size: 2.2rem;
+    bottom: 25px;
+    right: 25px;
+  }
+  .nav-button {
+    padding: 16px 32px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .chapter-container {
+    margin: 70px auto;
+    padding: 35px 30px;
+    max-width: 85%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 85%;
+    max-width: 550px;
+  }
+  .chapter-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  .pokemon-img {
+    width: 130px;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+  .skip-icon {
+    font-size: 2rem;
+  }
+  .nav-button {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapter-container {
+    margin: 60px auto;
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 90%;
+    max-width: 500px;
+  }
+  .chapter-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .pokemon-img {
+    width: 120px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .skip-icon {
+    font-size: 1.9rem;
+    bottom: 20px;
+    right: 20px;
+  }
+  .nav-button {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+  .chapter-container {
+    margin: 40px auto;
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 95%;
+    max-width: 400px;
+  }
+  .chapter-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .pokemon-img {
+    width: 100px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .skip-icon {
+    font-size: 1.7rem;
+    bottom: 15px;
+    right: 15px;
+  }
+  .nav-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}    
+    </style>
+</head>
+<body>
+    <div class="chapter-container">
+        <img src="img/chapter6main.png" alt="Champion Lucas" class="chapter-image">
+        <h1 class="title">Chapter 6 :<span>The Locket and the Legend </span></h1>
+        <div id="chapter-text" class="chapter-text"></div>
+<!-- Evolution Button -->
+
+<!-- Prev/Next Navigation Buttons -->
+<div class="nav-buttons" id="nav-buttons">
+  <button class="nav-button left frosty-glow" onclick="window.location.href='chapter5.html'">Previous Page</button>
+  <button class="nav-button right frosty-glow" onclick="window.location.href='Euvee.html'">Last Page</button>
+</div>
+        
+    </div>
+    <i id="skip-icon" class="bx bx-skip-next skip-icon" title="Skip Animation"></i>
+    <script>
+        
+const content = [
+  // Chapter 6: A New Beginning
+
+  // Battle Aftermath & Teleportation
+  { type: 'text', value: 'The final echoes of battle faded into silence. Fire and lightning dissipated into the ether as heroes stood victorious—but exhausted. A blinding flash enveloped them all.' + '\n\n' },
+  { type: 'text', value: 'When their vision cleared, they found themselves in the grand hall of Professor-Eevee’s hidden laboratory. Crystal lamps cast soft prisms of light across gleaming instruments and bubbling vials.' + '\n\n' },
+
+  // Initial Reactions
+  { type: 'text', value: '{name}Dr-Mira: "What just happened? One moment we were on the battlefield… the next, we’re here!"' + '\n\n' },
+  { type: 'text', value: '{name}Researcher-Kai: "The teleportation matrix you designed, Professor… it worked flawlessly under pressure."' + '\n\n' },
+    { type: 'img', src: 'img/lab.png', alt: 'Euvee creates island', className: 'sugar-img' },
+ 
+  { type: 'text', value: '{name}Trainer-Red: "I never imagined a safe haven during the fight. This lab… it’s a marvel."' + '\n\n' },
+  
+  // Professor’s Welcome & Warning
+  { type: 'text', value: 'Professor-Eevee appeared from behind a tall console, eyes filled with relief—and concern.' + '\n\n' },
+  { type: 'text', value: '{name}Professor-Eevee: "Everyone is alive… thank Arceus. But I have grave news: the forces of darkness saw Euvee’s power and will never rest until they capture her."' + '\n\n' },
+  { type: 'text', value: '{name}Officer-Jenny: "Kidnap her? But why? She’s saved the world!"' + '\n\n' },
+  { type: 'text', value: '{name}Professor-Eevee: "Because Euvee embodies the purest psychic energy—enough to turn the tide of any war. In the wrong hands, she could become a weapon of unimaginable destruction."' + '\n\n' },
+
+  // Emotional Reactions & Strategy
+  { type: 'text', value: '{name}Dr-Mira: *voice trembling* "We can’t let that happen. She’s like family to us."' + '\n\n' },
+  { type: 'text', value: '{name}Researcher-Kai: "Professor, what can we do?"' + '\n\n' },
+  { type: 'text', value: '{name}Professor-Eevee: "Euvee must go to a place beyond reach—an island lost to maps, hidden by her power."' + '\n\n' },
+  { type: 'text', value: '{name}Trainer-Red: "A mysterious island? But how will she survive alone?"' + '\n\n' },
+
+    { type: 'img', src: 'img/euvee-island.png', alt: 'Euvee creates island', className: 'sugar-img' },
+ 
+  // Euvee’s Purpose
+  { type: 'text', value: 'Euvee stepped forward, her fur glowing faintly. She let out a soft, determined bark that filled the room with warmth.' + '\n\n' },
+  { type: 'text', value: '{name}Euvee: *barks resolutely*' + '\n\n' },
+  { type: 'text', value: '{name}Professor-Eevee: "My dear star, you must create that island at the center of the vast ocean. No force can breach it unless a trainer’s heart shines true."' + '\n\n' },
+  { type: 'text', value: '{name}Officer-Jenny: "It sounds impossible… but if anyone can do it, it’s you, Euvee."' + '\n\n' },
+
+  // Emotional Preparation
+  { type: 'text', value: 'Tears welled in Dr-Mira’s eyes as she brushed a strand of hair from Euvee’s forehead.' + '\n\n' },
+  { type: 'text', value: '{name}Dr-Mira: "Promise me you’ll be safe… and that you’ll remember us."' + '\n\n' },
+  { type: 'text', value: 'Euvee nuzzled Mira’s hand, her eyes glistening with emotion. Researcher-Kai placed a gentle paw on Euvee’s back.' + '\n\n' },
+  { type: 'text', value: '{name}Researcher-Kai: "Your light gave us hope. Let it shine as a beacon for true trainers."' + '\n\n' },
+
+  // Euvee Creates the Island
+  { type: 'text', value: 'Under the domed ceiling, Euvee closed her eyes. Psychic energy swirled around her, lifting stone and water in a silent dance.' + '\n\n' },
+   { type: 'text', value: 'Within moments, the ocean beyond the lab’s reinforced viewport rippled… and a new island emerged, crowned with glowing flowers and whispering palms.' + '\n\n' },
+
+  // Farewell & Gift
+  { type: 'text', value: '{name}Trainer-Red: "It’s beautiful… she did it!"' + '\n\n' },
+  { type: 'text', value: 'Euvee trotted back, a small, glowing locket hanging from her mouth. She dropped it into Professor-Eevee’s outstretched hand.' + '\n\n' },
+  { type: 'img', src: 'img/magical-locket.png', alt: 'Glowing Magical Locket', className: 'sugar-img' },
+  { type: 'text', value: '{name}Professor-Eevee: "A locket… it feels alive."' + '\n\n' },
+  { type: 'text', value: '{name}Euvee: *soft bark, eyes full of promise*' + '\n\n' },
+  { type: 'text', value: '{name}Researcher-Kai: "Legend says this will call for help only when true danger threatens."' + '\n\n' },
+  { type: 'text', value: '{name}Dr-Mira: "And only a trainer with a heart as pure as yours can see its glow on any map."' + '\n\n' },
+  { type: 'text', value: '{name}Professor-Eevee: "Whenever danger stirs in the Pokémon world—or in my heart—open this locket, and I will come."' + '\n\n' },
+
+  // Final Goodbye
+  { type: 'text', value: 'Silence held them all for a heartbeat, then Euvee looked up one last time. Her eyes shone with gratitude and love.' + '\n\n' },
+  { type: 'text', value: '{name}Euvee: *joyful bark*' + '\n\n' },
+  { type: 'text', value: '{name}Officer-Jenny: "Goodbye, Euvee. May your island remain forever safe."' + '\n\n' },
+  { type: 'text', value: '{name}Trainer-Red: "Farewell, friend. We are your truehearted guardians always."' + '\n\n' },
+  { type: 'img', src: 'img/euvee-departure.png', alt: 'Euvee Leaving Lab into Night', className: 'sugar-img' },
+
+  // Epilogue: Discovery of the Island
+  { type: 'text', value: 'At dawn, the heroes set sail toward the new isle. Mist curled around its shores, and bioluminescent petals fluttered in the breeze.' + '\n\n' },
+  { type: 'text', value: '{name}Trainer-Red: "I can almost feel her spirit here…"' + '\n\n' },
+  { type: 'text', value: 'They placed the locket on an ancient stone altar carved with runes of protection. The gem blazed like morning sun.' + '\n\n' },
+  { type: 'text', value: '{name}Researcher-Kai: "Euvee’s magic guards this place. Only the pure of heart may step foot here."' + '\n\n' },
+  { type: 'text', value: 'A soft bark answered from the treeline. Euvee bounded into view, her fur aglow, eyes bright as ever.' + '\n\n' },
+  { type: 'text', value: '{name}Euvee: joyful bark' + '\n\n' },
+  { type: 'text', value: '{name}Professor-Eevee ( tears of eyes) : "We will miss you Euvee !! \nGood Bye Euvee."' + '\n\n' },
+
+  // Closing Reflection
+{ type: 'text', value: 'And so, in the heart of the ocean deep,\nA secret place began to breathe and sleep.\nGuarded by loyalty, lit by pure love’s flame,\nOnly true hearts could find its name.\nA home of hope where dreams would curl,\nFor every Pokémon and trainer in the world.\n\n' }
+    ];
+
+
+
+
+
+        const container = document.getElementById('chapter-text');
+        const nav = document.getElementById('nav-buttons');
+        const skipBtn = document.getElementById('skip-icon');
+        let idxSeg = 0, skipRequested = false, currentTyping;
+
+    
+        skipBtn.addEventListener('click', () => {
+            skipRequested = true;
+            showAll();
+            skipBtn.style.display = 'none';
+    
+        });
+
+        function renderNext() {
+            if (skipRequested) return;
+            if (idxSeg >= content.length) {
+                nav.style.display = 'flex';
+      evoBtn.style.display = 'block';
+      skipBtn.style.display = 'none';
+                return;
+            }
+            const seg = content[idxSeg++];
+            if (seg.type === 'text') {
+                typeWriter(seg.value, renderNext);
+            } else {
+                const img = document.createElement('img');
+                img.src = seg.src;
+                img.alt = seg.alt;
+                img.className = seg.className || 'inline-img sugar-img';
+                container.appendChild(img);
+                setTimeout(renderNext, 300);
+            }
+        }
+
+        function typeWriter(text, callback, pos = 0) {
+            if (skipRequested) return;
+            if (pos < text.length) {
+                if (text.startsWith('{name}', pos)) {
+                    pos += 6;
+                    let name = '';
+                    while (pos < text.length && text[pos] !== ':') name += text[pos++];
+                    pos++;
+                    const span = document.createElement('span');
+                    span.className = `name ${name.trim().toLowerCase()}`;
+                    span.textContent = name + ': ';
+                    container.appendChild(span);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                } else {
+                    const ch = text[pos++];
+                    container.innerHTML += (ch === '\n' ? '<br>' : ch);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                }
+            } else callback();
+        }
+
+        function showAll() {
+            if (currentTyping) clearTimeout(currentTyping);
+            container.innerHTML = '';
+            content.forEach(seg => {
+                if (seg.type === 'text') {
+                    const parts = seg.value.split(/(\{name\}[^:]+:?)/g);
+                    parts.forEach(p => {
+                        if (p.startsWith('{name}')) {
+                            const nm = p.slice(6).replace(/:$/, '');
+                            const span = document.createElement('span');
+                            span.className = `name ${nm.trim().toLowerCase()}`;
+                            span.textContent = nm + ':';
+                            container.appendChild(span);
+                        } else {
+                            container.innerHTML += p.replace(/\n/g, '<br>');
+                        }
+                    });
+                } else {
+                    const img = document.createElement('img');
+                    img.src = seg.src;
+                    img.alt = seg.alt;
+                    img.className = seg.className || 'inline-img sugar-img';
+                    container.appendChild(img);
+                }
+            });
+            nav.style.display = 'flex';
+        }
+
+        renderNext();
+    </script>
+       <script>
+      // Create an invisible audio element (silent initially)
+const bgMusic = new Audio('Music/pokemon_theme.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+function tryPlayMusic() {
+  bgMusic.play()
+  
+}
+
+// Ensure music plays after user interaction
+window.addEventListener('click', tryPlayMusic);
+window.addEventListener('keydown', tryPlayMusic);
+window.addEventListener('scroll', tryPlayMusic);
+
+// Stop the music when user clicks on the start button
+document.querySelector('.nav-buttons').addEventListener('click', () => {
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+});
+    </script>
+</body>
+</html>

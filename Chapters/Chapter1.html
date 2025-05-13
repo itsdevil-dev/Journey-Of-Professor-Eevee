@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chapter 1 - The Beginning of a Legend</title>
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lugrasimo">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Quicksand&display=swap" rel="stylesheet">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #e0d4fc, #ffe4f3);
+      min-height: 100vh; overflow-y: auto;
+      font-size: clamp(14px, 1.6vw, 18px);
+    }
+    .chapter-container {
+      max-width: 90%; margin: 60px auto; padding: 30px 25px;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(12px);
+      border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.3); animation: fadeIn 1.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .chapter-image, .inline-img {
+      width: 90%; max-width: 500px; height: auto;
+      border-radius: 15px; margin: 20px auto; display: block;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .chapter-text {
+      font-size:1.15rem; color:#333; font-family:'Marcellus', serif;
+      line-height:1.6; white-space:pre-wrap; text-align:left;
+    }
+    .name { font-weight: bold; text-shadow: 0 0 5px rgba(0,0,0,0.2);
+      background: linear-gradient(to right, #ff4081, #7c4dff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .name-eevee { color: #d4af37; font-weight: bold;
+      text-shadow:0 0 10px #ffd700aa;
+    }
+    .name-mystery { color: #FF1C47; font-weight: bold;
+      text-shadow:0 0 12px #ff1c47, 0 0 18px #ff1c47;
+    }
+    .name-oak { color: #4B8B3B; font-weight: bold; }
+  .nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.nav-button {
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff6b81, #ff6bd6);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.nav-button.right::before {
+  background: linear-gradient(135deg, #6b9eff, #6bffdf);
+}
+
+.nav-button:hover::before {
+  opacity: 1;
+}
+
+.nav-button.left {
+  color: #ff6b81;
+  border-color: #ff6b81;
+}
+
+.nav-button.right {
+  color: #6b9eff;
+  border-color: #6b9eff;
+}
+
+.nav-button:hover {
+  color: #fff;
+  box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+  transform: scale(1.05);
+  animation: pulseGlow 1.2s ease infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+  }
+  100% {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+}
+    .title {
+      font-family: 'Lugrasimo', serif; font-size:2rem; font-weight:bold;
+      margin-bottom:10px; color:#FF6B00; align-self:center;
+    }
+    .title span { color:#FF6B00; position:relative; display:inline-block; }
+    
+    @keyframes underlineSlide {
+      0%{ transform:translateX(0%);} 100%{transform:translateX(10%);}    }
+    /* Skip icon */
+    .skip-icon {
+      position:fixed; bottom:20px; right:20px;
+      font-size:2rem; cursor:pointer; z-index:999; color:#555;
+      transition: color 0.3s ease;
+    }
+    .skip-icon:hover { color:#000; }
+    
+    /* 1. फ्लूइड बेसिक फॉन्ट साइज */
+
+
+/* 2. बड़े स्क्रीन (>1200px) */
+@media (min-width: 1201px) {
+  .chapter-container {
+    margin: 80px auto;
+    padding: 40px 35px;
+    max-width: 70%;
+  }
+  .chapter-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  .chapter-image,
+  .inline-img {
+    width: 80%;
+    max-width: 600px;
+  }
+  .nav-button {
+    padding: 16px 32px;
+    font-size: 1.3rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+/* 3. मीडियम डिवाइस (≤1200px) */
+@media (max-width: 1200px) {
+  .chapter-container {
+    margin: 70px auto;
+    padding: 35px 30px;
+    max-width: 85%;
+  }
+  .chapter-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  .chapter-image,
+  .inline-img {
+    width: 85%;
+    max-width: 550px;
+  }
+  .nav-button {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+/* 4. छोटे डिवाइस (≤768px) */
+@media (max-width: 768px) {
+  .chapter-container {
+    margin: 60px auto;
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+  .chapter-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .chapter-image,
+  .inline-img {
+    width: 90%;
+    max-width: 500px;
+  }
+  .nav-button {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* 5. बहुत छोटे डिवाइस (<500px) */
+@media (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+  .chapter-container {
+    margin: 40px auto;
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+  .chapter-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .chapter-image,
+  .inline-img {
+    width: 95%;
+    max-width: 400px;
+  }
+  .nav-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.7rem;
+  }
+  .skip-icon {
+    font-size: 1.8rem;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+    
+    
+  </style></head>
+<body>
+  <div class="chapter-container">
+    <img src="img/chapter1main.png" alt="Mysterious Cave" class="chapter-image" />
+    <h1 class="title">Chapter1 :<span>The Journey Begins </span></h1>
+    <div id="chapter-text" class="chapter-text"></div>
+    <div class="nav-buttons" id="nav-buttons" style="display:none;">
+      <button class="nav-button left"  onclick="location.href='index.html'">Previous Page</button>
+      <button class="nav-button right" onclick="location.href='chapter2.html'">Next Page</button>
+    </div>
+  </div>  <!-- Skip typing icon --><i id="skip-icon" class="bx bx-skip-next skip-icon" title="Skip Animation"></i>
+
+  <script>
+    const content = [
+   { type:'img', src:'img/injuredEeevee.png', alt:'Injured Eevee' },
+      { type:'text', value:`It all began on a quiet evening in Pallet Town.\n\nLucas sat near the lake, skipping stones and wondering if he’d ever become a real Trainer. Just then, he heard a soft rustle in the tall grass behind him.\n\n{name}Lucas: "Huh...? What was that?"\n\nFrom the shadows, a small, injured Eevee limped out. Its fur was dirty, and it looked scared—but its eyes still held a spark of strength.\n\n{name}Lucas: "Hey... are you okay?"\n`},
+        { type:'text', value:`He gently offered it some berries from his bag. The Eevee hesitated... then slowly nibbled one and curled up beside him.\n\n{name}Lucas: "You’re not alone anymore. From now on, we walk this path together."\n\nThe next morning, Professor Oak found them together by the lake.\n\n{name}Prof. Oak: "Well, well... seems like this Eevee has chosen you, Lucas."\n\nAnd with that, the bond was sealed.\n\nA mysterious Eevee. A boy with a dream. And a journey that would echo across generations.\n\nA beautiful, radiant morning painted the skies as Trainer Lucas and his loyal Eevee ventured deep into the unknown. The forest whispered ancient secrets, and a soft breeze carried the scent of something magical.\n\n{name}Lucas: "Eevee, ready for today’s adventure?"\n\n{name}Eevee: "Vee!!"\n`},
+    { type:'text', value:`With excitement in their steps, they wandered until a hidden cave revealed itself beneath thick vines and glowing moss. Inside, the air shimmered with mystery.\n\n{name}Lucas: "Whoa… what is that?"\n`},
+      { type:'img', src:'img/mysteriouscave.png', alt:'Glowing Cave' },
+      { type:'text', value:`A strange Pokémon with luminous eyes appeared, hovering above the ground. In its small hands, it held a glowing orb—alive with swirling light.\n\n{name}Mysterious Pokémon: "This... belongs to you."\n\nBefore Lucas could react, the Pokémon gently placed the orb in his hands.\n`},
+     { type:'text', value:`As his fingers touched the surface, energy surged from it—rushing into Eevee.\n\n{name}Lucas: "Eevee?! Are you okay?"\n\n{name}Eevee: "Veee… vee..."\n\nA warm aura enveloped Eevee. It glowed brighter than ever... and then settled. Something had changed—but Eevee didn’t evolve. It stayed just as it was.\n\n{name}Lucas: "That’s.... Amazing , But What is this orb ?"\n\n{name}Mysterious Pokémon: "That energy is not for evolution. It is for something far greater..."\n\nLucas put the orb in his bag, Lucas knew this journey was no longer ordinary.\n\nIt was the beginning of a legend.\n\n{name}Lucas: "Whatever this means, Eevee... we'll find out together."\n\n{name}Eevee: "Eeveee!!"\n`},
+         ];
+
+    const container = document.getElementById('chapter-text');
+    const nav = document.getElementById('nav-buttons');
+    const skipBtn = document.getElementById('skip-icon');
+    let idxSeg = 0;
+    let skipRequested = false;
+    let currentTyping = null;
+
+    // Skip handler
+    skipBtn.addEventListener('click', () => {
+      skipRequested = true;
+      dumpAll();
+      skipBtn.style.display = 'none';
+    });
+
+    function renderNext() {
+      if (skipRequested) return;
+      if (idxSeg >= content.length) {
+        nav.style.display = 'flex';
+        skipBtn.style.display = 'none';
+        return;
+      }
+      const seg = content[idxSeg++];
+      if (seg.type === 'text') {
+        typeWriter(seg.value, renderNext);
+      } else {
+        const img = document.createElement('img');
+        img.src = seg.src;
+        img.alt = seg.alt;
+        img.className = 'inline-img';
+        container.appendChild(img);
+        setTimeout(renderNext, 300);
+      }
+    }
+
+    function typeWriter(text, callback, pos=0) {
+      if (skipRequested) return;
+      if (pos < text.length) {
+        if (text.substr(pos,6) === '{name}') {
+          pos += 6;
+          let name = '';
+          while (pos < text.length && text[pos] !== ':') name += text[pos++];
+          pos++;
+          const span = document.createElement('span');
+          let cls = 'name';
+          if (name.trim() === 'Eevee') cls='name-eevee';
+          else if (name.trim()==='Mysterious Pokémon') cls='name-mystery';
+          else if (name.trim()==='Prof. Oak') cls='name-oak';
+          span.className = cls;
+          span.textContent = name + ': ';
+          container.appendChild(span);
+          currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+        } else {
+          const ch = text[pos++];
+          container.innerHTML += (ch === '\n' ? '<br>' : ch);
+          currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+        }
+      } else callback();
+    }
+
+    function dumpAll() {
+      if (currentTyping) clearTimeout(currentTyping);
+      container.innerHTML = '';
+      content.forEach(seg => {
+        if (seg.type === 'text') {
+          const parts = seg.value.split(/(\{name\}[^:]+:?)/g);
+          parts.forEach(p => {
+            if (p.startsWith('{name}')) {
+              const nm = p.slice(6, -1);
+              const span = document.createElement('span');
+              let cls = 'name';
+              if (nm.trim()==='Eevee') cls='name-eevee';
+              else if (nm.trim()==='Mysterious Pokémon') cls='name-mystery';
+              else if (nm.trim()==='Prof. Oak') cls='name-oak';
+              span.className = cls;
+              span.innerText = nm + ':';
+              container.appendChild(span);
+            } else {
+              container.innerHTML += p.replace(/\n/g,'<br>');
+            }
+          });
+        } else {
+          const img = document.createElement('img');
+          img.src = seg.src;
+          img.alt = seg.alt;
+          img.className = 'inline-img';
+          container.appendChild(img);
+        }
+      });
+      nav.style.display = 'flex';
+    }
+
+    // Start rendering
+    renderNext();
+  </script>
+  <script>
+  // Create an invisible audio element (silent initially)
+const bgMusic = new Audio('Music/1.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+function tryPlayMusic() {
+  bgMusic.play()
+  
+}
+
+// Ensure music plays after user interaction
+window.addEventListener('click', tryPlayMusic);
+window.addEventListener('keydown', tryPlayMusic);
+window.addEventListener('scroll', tryPlayMusic);
+
+// Stop the music when user clicks on the start button
+document.querySelector('.nav-buttons').addEventListener('click', () => {
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+});
+  </script>
+</body>
+</html>

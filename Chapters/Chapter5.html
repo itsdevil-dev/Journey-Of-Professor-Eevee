@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chapter5: The Darkness</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lugrasimo">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+        .chapter-container {
+            max-width: 90%;
+            margin: 60px auto;
+            padding: 30px 25px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: fadeIn 1.2s ease-out;  
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .chapter-image,
+.inline-img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: floaty 6s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.chapter-image:hover,
+.inline-img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 60px #E57373;
+}
+
+/* Subtle floating animation */
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+        .pokemon-img {
+            width: 120px;
+            margin: 10px 0;
+        }
+      .sugar-img {
+    display: block;
+    margin: 20px auto; /* centers the image horizontally */
+    width: 70%;
+    max-width: 500px;
+    height: 70%;
+    border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.sugar-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+        .chapter-text {
+            font-size: 1.15rem;
+            color: white;
+            font-family: 'Marcellus', serif;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+        .name {
+            font-weight: bold;
+            
+        }
+ .name.professor-eevee {
+    background: linear-gradient(to right, #00b4db, #0083b0); /* Ocean blue magic */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.team-shadow-vortex-leader {
+    background: #8e2de2; /* Purple storm */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.team-shadow-vortex-commander {
+    background: linear-gradient(to right, #e52d27, #b31217); /* Crimson command */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.grunt-i,
+.name.grunt-ii,
+.name.grunt-iii {
+    background: black; /* Shadow operative */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.lieutenant-nocturne {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Midnight cloak */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.officer-jenny {
+    background: linear-gradient(to right, #11998e, #38ef7d); /* Emerald badge */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.name.dr-mira {
+    background: linear-gradient(to right, #f7971e, #ffd200); /* Golden healer */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.researcher-kai {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Electric insight */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+   .name.staryu {
+    color: #40E0D0; /* Turquoise-like, matches its Water-type energy */
+}
+.name.onix {
+    color: #708090; /* Slate Gray, gives a rocky, sturdy feel */
+}
+    
+    .name.nurse-joy {
+        color: pink;
+    }
+.name.trainer-red {
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Fiery spirit */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.charizard {
+    background: linear-gradient(to right, #fe8c00, #e52d27); /* Flame roar */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.dragonite {
+    background: linear-gradient(to right, #a8c0ff, #3f2b96); /* Sky guardian */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.ninetales {
+    background: linear-gradient(to right, #f8ffae, #43c6ac); /* Mystic ember */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.gardevoir {
+    background: linear-gradient(to right, #7f00ff, #e100ff); /* Psychic grace */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    .name.misty { 
+        color: blue;
+    }
+    .name.brock {
+        color: grey;
+    }
+.name.gengar {
+    background: linear-gradient(to right, #654ea3, #eaafc8); /* Shadow grin */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.eevee {
+    background: transparent;
+    color: cyan;
+}
+    
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF6F61; /* Soft coral red for glow */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    animation: titleFadeIn 2s ease-in-out both;
+    text-shadow: 0 2px 10px rgba(255, 50, 50, 0.7);
+    background-color: transparent; /* Deep dark red background */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.title span {
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+}
+
+.title span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 5px;
+    background: linear-gradient(to right, #8B0000, #B22222); /* Dark blood red to firebrick */
+    border-radius: 3px;
+    animation: underlineGlow 3s ease-in-out infinite alternate;
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.6);
+}
+    
+/* Animation Keyframes */
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes underlineGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(142, 45, 226, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(74, 0, 224, 0.8);
+    }
+}
+
+@keyframes underlineGlow {
+    0% {
+        width: 60%;
+        box-shadow: 0 0 5px rgba(196, 113, 237, 0.4);
+    }
+    100% {
+        width: 100%;
+        box-shadow: 0 0 15px rgba(246, 79, 89, 0.6);
+    }
+}
+
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        
+        .skip-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 999;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        .skip-icon:hover {
+            color: #000;
+        }
+
+
+.nav-buttons {
+  display: none;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto 0;
+}
+
+.nav-button {
+  padding: 14px 30px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: 50px;
+  background: #1a1a1a;
+  color: #e53935;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  border: 2px solid #e53935;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Left / Right base colors */
+.nav-button.left { color: #e53935; border-color: #e53935; }
+.nav-button.right { color: #d32f2f; border-color: #d32f2f; }
+
+/* Jagged glitch border overlay */
+.nav-button::before,
+.nav-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  pointer-events: none;
+  opacity: 0;
+  transition: none;
+}
+
+.nav-button::before {
+  border: 2px dashed currentColor;
+  mix-blend-mode: screen;
+}
+
+.nav-button::after {
+  border: 2px solid transparent;
+  box-shadow:
+    inset 0 0 8px currentColor,
+    0 0 12px currentColor,
+    0 0 20px currentColor;
+  filter: blur(2px);
+}
+
+/* On hover: fill, glitch border flicker, shake */
+.nav-button:hover {
+  background: #e53935;
+  color: #fff;
+  transform: scale(1.05) skewX(-2deg);
+  animation: shake 0.3s ease-in-out 2 alternate;
+}
+
+.nav-button.left:hover { border-color: #b71c1c; }
+.nav-button.right:hover { border-color: #b71c1c; }
+
+.nav-button:hover::before,
+.nav-button:hover::after {
+  opacity: 1;
+  animation: flicker 0.15s infinite;
+}
+
+/* Quick shake animation */
+@keyframes shake {
+  0%   { transform: translateX(0) skewX(-2deg); }
+  25%  { transform: translateX(-2px) skewX(-2deg); }
+  50%  { transform: translateX(2px) skewX(-2deg); }
+  75%  { transform: translateX(-1px) skewX(-2deg); }
+  100% { transform: translateX(0) skewX(-2deg); }
+}
+
+/* Border flicker/glitch */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; transform: translate(1px, -1px); }
+  25%, 75% { opacity: 0.8; transform: translate(-1px, 1px); }
+}
+
+html {
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+@media (min-width: 1201px) {
+  .chapter-container {
+    margin: 80px auto;
+    padding: 40px 35px;
+    max-width: 70%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 80%;
+    max-width: 600px;
+  }
+  .chapter-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  .pokemon-img {
+    width: 140px;
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+  .skip-icon {
+    font-size: 2.2rem;
+    bottom: 25px;
+    right: 25px;
+  }
+  .nav-button {
+    padding: 16px 32px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .chapter-container {
+    margin: 70px auto;
+    padding: 35px 30px;
+    max-width: 85%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 85%;
+    max-width: 550px;
+  }
+  .chapter-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  .pokemon-img {
+    width: 130px;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+  .skip-icon {
+    font-size: 2rem;
+  }
+  .nav-button {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapter-container {
+    margin: 60px auto;
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 90%;
+    max-width: 500px;
+  }
+  .chapter-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .pokemon-img {
+    width: 120px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .skip-icon {
+    font-size: 1.9rem;
+    bottom: 20px;
+    right: 20px;
+  }
+  .nav-button {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+  .chapter-container {
+    margin: 40px auto;
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 95%;
+    max-width: 400px;
+  }
+  .chapter-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .pokemon-img {
+    width: 100px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .skip-icon {
+    font-size: 1.7rem;
+    bottom: 15px;
+    right: 15px;
+  }
+  .nav-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="chapter-container">
+        <img src="img/chapter5Main.png" alt="Champion Lucas" class="chapter-image">
+        <h1 class="title">Chapter 5 :<span>The Team Shadow Vortex </span></h1>
+        <div id="chapter-text" class="chapter-text"></div>
+<!-- Evolution Button -->
+
+<!-- Prev/Next Navigation Buttons -->
+<div class="nav-buttons" id="nav-buttons">
+  <button class="nav-button left frosty-glow" onclick="window.location.href='chapter4.html'">Previous Page</button>
+  <button class="nav-button right frosty-glow" onclick="window.location.href='chapter6.html'">Next Page</button>
+</div>
+        
+    </div>
+    <i id="skip-icon" class="bx bx-skip-next skip-icon" title="Skip Animation"></i>
+    <script>
+        
+const content = [
+
+{ type: 'text', value: 'Euvee flew on the white wind, senses ready for danger. Below her, an Arbok coiled around a scared Rattata, venom dripping on the cold stone.\n\n' },
+
+{ type: 'img', src: 'img/euvee-plunge.png', alt: 'Euvee Plunging Toward Mountain', className: 'sugar-img' },
+
+{ type: 'text', value: 'She fell like an arrow, but at the mountain’s sharp edge, magic walls closed around her, trapping her in a cage of moving shadows.\n\n' },
+
+{ type: 'text', value: '{name}Team-Shadow-Vortex-Leader: "Welcome to your prison, Euvee. Your light ends here."\n\n' },
+
+{ type: 'text', value: '{name}Team-Shadow-Vortex-Commander: "Leader, the crystal is steady. Shall we start the drain?"\n\n' },
+
+{ type: 'text', value: '{name}Team-Shadow-Vortex-Leader: "Yes. Turn on the tubes."\n\n' },
+
+{ type: 'text', value: '{name}Grunt-I: "She’s moving wildly, but the walls hold!"\n\n' },
+
+{ type: 'text', value: '{name}Grunt-II: "HQ reports a strong magic signal. They’ve called Officer Jenny."\n\n' },
+
+{ type: 'text', value: 'Far away, sirens rang at the police HQ. Officer Jenny ran into the lab, out of breath and worried.\n\n' },
+
+{ type: 'img', src: 'img/hq-alarm.png', alt: 'Police HQ Alarm Room', className: 'sugar-img' },
+
+{ type: 'text', value: '{name}Officer-Jenny: "Professor, we got their messages—Euvee is at Thunderfang Summit, trapped! Shadow Vortex wants her power!"\n\n' },
+
+{ type: 'text', value: '{name}Professor-Eevee: "That can’t be. Dr. Mira, Kai, come quickly!"\n\n' },
+
+{ type: 'text', value: '{name}Dr-Mira: "On my way!"\n\n' },
+
+{ type: 'text', value: '{name}Researcher-Kai: "Scans show dark auras. Sending you the spot now."\n\n' },
+
+{ type: 'text', value: '{name}Professor-Eevee: "Red! Kai, tell Trainer Red to hurry here and find a weak point in their leader."\n\n' },
+
+{ type: 'text', value: '{name}Researcher-Kai: "Working on it, Professor. He uses dark crystals that we can break."\n\n' },
+
+{ type: 'text', value: 'Moments later, Trainer Red arrived with his team.\n\n' },
+
+{ type: 'text', value: '{name}Trainer-Red: "Sorry I’m late. Charizard, Dragonite—ready to attack from above? Ninetales, Gardevoir—support on the ground?"\n\n' },
+
+{ type: 'text', value: '{name}Charizard: roars and breathes fire into the sky\n\n' },
+
+{ type: 'text', value: '{name}Dragonite: wings shining in the dusk\n\n' },
+
+{ type: 'text', value: '{name}Ninetales: tails flicking like embers\n\n' },
+
+{ type: 'text', value: '{name}Gardevoir: a soft glow surrounds the group\n\n' },
+
+{ type: 'text', value: 'Together, they flew through wind and thunder until the dark shape of Thunderfang appeared.\n\n' },
+
+{ type: 'img', src: 'img/thunderfang-silhouette.png', alt: 'Thunderfang Silhouette', className: 'sugar-img' },
+
+{ type: 'text', value: '{name}Officer-Jenny: "Remember, they will try to surprise us. Dr. Mira, set up shields. Kai, turn off their sensors."\n\n' },
+
+{ type: 'text', value: '{name}Dr-Mira: "Shields are up."\n\n' },
+
+{ type: 'text', value: '{name}Researcher-Kai: "Sensors are down."\n\n' },
+
+{ type: 'text', value: 'Suddenly, Shadow Vortex grunts jumped out from hidden gaps. A fierce fight broke out on the wet rocks.\n\n' },
+
+{ type: 'text', value: '{name}Grunt-III: "Aim for their wings! Bring them down!"\n\n' },
+
+{ type: 'text', value: '{name}Charizard: makes a huge firestorm\n\n' },
+
+{ type: 'text', value: '{name}Dragonite: blows strong winds that scatter the enemies\n\n' },
+
+{ type: 'text', value: '{name}Researcher-Kai: "Extra crystal shields ahead—break them quickly!"\n\n' },
+
+{ type: 'text', value: '{name}Dr-Mira: "On it! Deploying mirror shields to reflect the dark bolts!"\n\n' },
+
+{ type: 'text', value: '{name}Team-Shadow-Vortex-Leader: "They are stronger than we thought! Grunts, fall back to the base—bring the lieutenant!"\n\n' },
+
+{ type: 'text', value: 'From the shadows stepped Lieutenant Nocturne, cloak swirling with darkness.\n\n' },
+
+{ type: 'img', src: 'img/lieutenant-nocturne.png', alt: 'Lieutenant Nocturne Arrives', className: 'sugar-img' },
+
+{ type: 'text', value: '{name}Lieutenant-Nocturne: "I have come to change the fight. Lead me to the cage."\n\n' },
+
+{ type: 'text', value: '{name}Team-Shadow-Vortex-Leader: "Just in time."\n\n' },
+
+// New battle dialogue between Professor-Eevee and Evil Team: 
+    { type: 'text', value: '{name}Professor-Eevee: "Nocturne! Your darkness has no place here!"\n\n' }, { type: 'text', value: '{name}Lieutenant-Nocturne: "You dare challenge me, old man?"\n\n' }, { type: 'text', value: '{name}Professor-Eevee: "For every shadow you cast, there is light to break it!"\n\n' }, { type: 'text', value: '{name}Lieutenant-Nocturne: "Then face true despair!"\n\n' }, { type: 'text', value: 'Nocturne fires a wave of dark spikes. Professor-Eevee raises a barrier of light.\n\n' }, { type: 'text', value: '{name}Grunt-I: "The professor shield is too strong!"\n\n' }, { type: 'text', value: '{name}Dr-Mira: "Kai, channel energy through the crystal disruptor!"\n\n' }, { type: 'text', value: '{name}Researcher-Kai: "Disruptor is ready—firing!"\n\n' }, { type: 'text', value: 'A pulse breaks Nocturne dark cloak. He stumbles back, surprised.\n\n' }, { type: 'text', value: '{name}Lieutenant-Nocturne: "Impossible... my power... weakening..."\n\n' }, { type: 'text', value: '{name}Professor-Eevee: "Light always finds a way."\n\n' },
+
+{ type: 'text', value: 'Suddenly, the leader raised his arms and released dark energy. The ground shook as his stolen power hit the heroes.\n\n' },
+
+{ type: 'text', value: '{name}Team-Shadow-Vortex-Leader: "Now, feel true despair!"\n\n' },
+
+{ type: 'text', value: 'Just then, Eevee glowing with moonlight jumped forward and used a huge Psybeam Attack on the cage.\n\n' },
+
+{ type: 'img', src: 'img/moonblast-cage.png', alt: 'Moonblast On Magical Cage', className: 'sugar-img' },
+
+{ type: 'text', value: 'The cage burst into light and pieces flew. Free at last, Euvee’s aura shone bright.\n\n' },
+
+{ type: 'text', value: 'Without waiting, Euvee used Teleport to gather all heroes behind the mountain. Moments later, she stood alone against the leader on the broken peak.\n\n' },
+
+{ type: 'text', value: '{name}Eevee: "veee !!"\n\n' },
+
+{ type: 'text', value: 'With all her strength, Euvee released the biggest Psybeam the world had seen—so strong it shattered Thunderfang Summit.\n\n' },
+
+{ type: 'img', src: 'img/psybeam-cataclysm.png', alt: 'Euvee Unleashing Cataclysmic Psybeam', className: 'sugar-img' },
+
+{ type: 'text', value: 'Darkness faded as the mountain turned to dust. When the dust settled, only heroes remained, their eyes filled with Euvee’s bright light.\n\n' },
+
+{ type: 'text', value: '{name}Trainer-Red: "Your power... it’s amazing."\n\n' },
+
+{ type: 'text', value: '{name}Officer-Jenny: "You are a true sign of hope."\n\n' },
+
+{ type: 'text', value: '{name}Professor-Eevee: "My little star... you have done more than I dreamed."\n\n' },
+
+{ type: 'text', value: '{name}Dr-Mira: "Together, we will learn to guide this gift."\n\n' },
+
+{ type: 'text', value: '{name}Researcher-Kai: "This data... it changes everything."\n\n' },
+
+{ type: 'text', value: 'Euvee was not born to fight and fall,\nShe was born to heal, to answer every call.\nWith eyes that shine and heart so wide,\nShe walks with love, not with pride.' }
+
+];
+
+
+
+
+
+        const container = document.getElementById('chapter-text');
+        const nav = document.getElementById('nav-buttons');
+        const skipBtn = document.getElementById('skip-icon');
+        let idxSeg = 0, skipRequested = false, currentTyping;
+
+    
+        skipBtn.addEventListener('click', () => {
+            skipRequested = true;
+            showAll();
+            skipBtn.style.display = 'none';
+    
+        });
+
+        function renderNext() {
+            if (skipRequested) return;
+            if (idxSeg >= content.length) {
+                nav.style.display = 'flex';
+      evoBtn.style.display = 'block';
+      skipBtn.style.display = 'none';
+                return;
+            }
+            const seg = content[idxSeg++];
+            if (seg.type === 'text') {
+                typeWriter(seg.value, renderNext);
+            } else {
+                const img = document.createElement('img');
+                img.src = seg.src;
+                img.alt = seg.alt;
+                img.className = seg.className || 'inline-img sugar-img';
+                container.appendChild(img);
+                setTimeout(renderNext, 300);
+            }
+        }
+
+        function typeWriter(text, callback, pos = 0) {
+            if (skipRequested) return;
+            if (pos < text.length) {
+                if (text.startsWith('{name}', pos)) {
+                    pos += 6;
+                    let name = '';
+                    while (pos < text.length && text[pos] !== ':') name += text[pos++];
+                    pos++;
+                    const span = document.createElement('span');
+                    span.className = `name ${name.trim().toLowerCase()}`;
+                    span.textContent = name + ': ';
+                    container.appendChild(span);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                } else {
+                    const ch = text[pos++];
+                    container.innerHTML += (ch === '\n' ? '<br>' : ch);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                }
+            } else callback();
+        }
+
+        function showAll() {
+            if (currentTyping) clearTimeout(currentTyping);
+            container.innerHTML = '';
+            content.forEach(seg => {
+                if (seg.type === 'text') {
+                    const parts = seg.value.split(/(\{name\}[^:]+:?)/g);
+                    parts.forEach(p => {
+                        if (p.startsWith('{name}')) {
+                            const nm = p.slice(6).replace(/:$/, '');
+                            const span = document.createElement('span');
+                            span.className = `name ${nm.trim().toLowerCase()}`;
+                            span.textContent = nm + ':';
+                            container.appendChild(span);
+                        } else {
+                            container.innerHTML += p.replace(/\n/g, '<br>');
+                        }
+                    });
+                } else {
+                    const img = document.createElement('img');
+                    img.src = seg.src;
+                    img.alt = seg.alt;
+                    img.className = seg.className || 'inline-img sugar-img';
+                    container.appendChild(img);
+                }
+            });
+            nav.style.display = 'flex';
+        }
+
+        renderNext();
+    </script>
+       <script>
+      // Create an invisible audio element (silent initially)
+const bgMusic = new Audio('Music/LavenderTown.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+function tryPlayMusic() {
+  bgMusic.play()
+  
+}
+
+// Ensure music plays after user interaction
+window.addEventListener('click', tryPlayMusic);
+window.addEventListener('keydown', tryPlayMusic);
+window.addEventListener('scroll', tryPlayMusic);
+
+// Stop the music when user clicks on the start button
+document.querySelector('.nav-buttons').addEventListener('click', () => {
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+});
+    </script>
+</body>
+</html>

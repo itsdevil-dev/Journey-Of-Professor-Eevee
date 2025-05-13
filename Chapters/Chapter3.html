@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chapter3: The Birth Of Euvee</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lugrasimo">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ffe4e1, #e0ffff);
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+        .chapter-container {
+            max-width: 90%;
+            margin: 60px auto;
+            padding: 30px 25px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: fadeIn 1.2s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .chapter-image,
+.inline-img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: floaty 6s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.chapter-image:hover,
+.inline-img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 60px cyan;
+}
+
+/* Subtle floating animation */
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+        .pokemon-img {
+            width: 120px;
+            margin: 10px 0;
+        }
+      .sugar-img {
+    display: block;
+    margin: 20px auto; /* centers the image horizontally */
+    width: 70%;
+    max-width: 500px;
+    height: 70%;
+    border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.sugar-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+        .chapter-text {
+            font-size: 1.15rem;
+            color: #333;
+            font-family: 'Marcellus', serif;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+        .name {
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+      .name.lucas {
+    background: linear-gradient(to right, #ff6f61, #de4313);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.professor-eevee {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.assistant-mira {
+    background: linear-gradient(to right, #f7971e, #ffd200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.researcher-kai {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.euvee {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+       .title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #5B2C6F;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    animation: titleFadeIn 1.5s ease-in-out both;
+}
+
+.title span {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.title span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #C471ED, #F64F59);
+    border-radius: 2px;
+    animation: underlineGlow 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 8px rgba(246, 79, 89, 0.6);
+}
+
+@keyframes underlineGlow {
+    0% {
+        width: 60%;
+        box-shadow: 0 0 5px rgba(196, 113, 237, 0.4);
+    }
+    100% {
+        width: 100%;
+        box-shadow: 0 0 15px rgba(246, 79, 89, 0.6);
+    }
+}
+
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        
+        .skip-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 999;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+        .skip-icon:hover {
+            color: #000;
+        }
+
+.nav-buttons {
+  display: none;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto 0;
+}
+
+.nav-button {
+  --main: #fff;                /* text color when not hovered */
+  --accent: #f06292;           /* left button accent */
+  --accent2: #00acc1;          /* right button accent */
+  --size: 14px 30px;
+  padding: var(--size);
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--main);
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  border: 2px solid currentColor;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Assign each side its accent color */
+.nav-button.left { color: var(--accent); border-color: var(--accent); }
+.nav-button.right { color: var(--accent2); border-color: var(--accent2); }
+
+/* Prism stripe overlay */
+.nav-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 99, 71, 0.6),
+    rgba(255, 215, 0, 0.6),
+    rgba(0, 191, 255, 0.6),
+    rgba(138, 43, 226, 0.6)
+  );
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+/* Bring the stripes in, animate them, and bounce */
+.nav-button:hover::before {
+  opacity: 1;
+  animation: prismFlow 2s linear infinite;
+}
+
+.nav-button:hover {
+  color: #fff;
+  transform: scale(1.1) translateY(-3px);
+  animation: bounceEnd 0.6s ease-out 1;
+}
+
+/* Moving gradient stripes */
+@keyframes prismFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Final little bounce */
+@keyframes bounceEnd {
+  0%   { transform: scale(1.1) translateY(-3px); }
+  50%  { transform: scale(1.05) translateY(-1px); }
+  100% { transform: scale(1.1) translateY(-3px); }
+}
+
+
+html {
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+@media (min-width: 1201px) {
+  .chapter-container {
+    margin: 80px auto;
+    padding: 40px 35px;
+    max-width: 70%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 80%;
+    max-width: 600px;
+  }
+  .chapter-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  .pokemon-img {
+    width: 140px;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .nav-button {
+    padding: 16px 32px;
+    font-size: 1.3rem;
+  }
+  .skip-icon {
+    font-size: 2.2rem;
+    bottom: 25px;
+    right: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .chapter-container {
+    margin: 70px auto;
+    padding: 35px 30px;
+    max-width: 85%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 85%;
+    max-width: 550px;
+  }
+  .chapter-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  .pokemon-img {
+    width: 130px;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .nav-button {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+  }
+  .skip-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapter-container {
+    margin: 60px auto;
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 90%;
+    max-width: 500px;
+  }
+  .chapter-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .pokemon-img {
+    width: 120px;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .nav-button {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+  }
+  .skip-icon {
+    font-size: 1.9rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+  .chapter-container {
+    margin: 40px auto;
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 95%;
+    max-width: 400px;
+  }
+  .chapter-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .pokemon-img {
+    width: 100px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .nav-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  .skip-icon {
+    font-size: 1.7rem;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="chapter-container">
+        <img src="img/chapter3main.png" alt="Champion Lucas" class="chapter-image">
+        <h1 class="title">Chapter 3 :<span>The Miracle Egg and the Birth of Euvee</span></h1>
+        <div id="chapter-text" class="chapter-text"></div>
+
+<div class="nav-buttons" id="nav-buttons">
+  <button class="nav-button left frosty-glow" onclick="window.location.href='chapter2.html'">Previous Page</button>
+  <button class="nav-button right frosty-glow" onclick="window.location.href='chapter4.html'">Next Page</button>
+</div>
+        
+    </div>
+    <i id="skip-icon" class="bx bx-skip-next skip-icon" title="Skip Animation"></i>
+    <script>
+        const content = [  
+  { type: 'text', value: `After building his research lab, Lucas took on a new identity—one that echoed across regions: Professor Eevee.\n` },  
+
+  { type: 'text', value: `Fueled by the mysteries of the past and the glowing orb that changed everything, he set out to create something never seen before.\n\n{name}Professor-Eevee: "What if... an Eevee could be born from pure energy, from hope itself?"\n\n` },  
+
+  { type: 'text', value: `Using the DNA of his loyal Eevee and the remaining energy from the mysterious orb, Lucas initiated a bold experiment—a human-made Pokémon egg.`},  
+
+  { type: 'img', src: 'img/euvee-egg.png', alt: 'Euvee Egg Hatching', className: 'sugar-img' },  
+
+  { type: 'text', value: `The process wasn’t easy. The lab needed precise temperature, balanced aura fields, and endless patience.\n\n{name}Assistant-Mira: "Professor, are you sure this will work? We've never created life this way before..."\n\n{name}Lucas: "Sometimes, Mira, the impossible is just the unexplored."\n\n` },  
+
+  { type: 'text', value: `For months, Lucas documented every flicker of energy, every heartbeat from inside the egg. Fellow researchers often visited, fascinated by his devotion.\n\n{name}Researcher-Kai: "If anyone can do it, it’s you, Professor Eevee."\n\n{name}Lucas (smiling): "Not me, Kai... us. Hope is a shared journey."\n\n` },  
+
+  { type: 'text', value: `And then, after four long months...\n\n{name}Lucas: "It’s hatching...!"\n\n` },  
+
+  { type: 'img', src: 'img/euvee-cute.png', alt: 'Euvee Egg Hatching', className: 'sugar-img' },  
+
+  { type: 'text', value: `From the warm light of the incubator, a baby Pokémon emerged. Her fur glowed faintly, like stars wrapped in fog. Her eyes blinked slowly, adjusting to the world.\n\n{name}Assistant-Mira (whispering): "She's... beautiful."\n\n{name}Lucas (softly): "Welcome to the world... Euvee... "\n\n` },  
+
+  { type: 'text', value: `Lucas cared for Euvee like his own child. She learned to walk, to play, and to nuzzle into his coat whenever she felt sleepy. Their bond was instant, pure, and unlike anything Lucas had ever felt.\n\n{name}Researcher-Kai: "She’s not just a Pokémon. She’s a miracle."\n\n{name}Lucas: "A miracle born of hope... and a little bit of madness."\n\n` },  
+
+  { type: 'text', value: `But one evening, something unimaginable happened...\n\nEuvee wandered into the orb chamber, where the last glowing piece of the mystical stone still sat—crackling softly with ancient power.` },  
+
+  { type: 'text', value: `Drawn by instinct, curiosity, and perhaps destiny, Euvee climbed the pedestal. Her eyes locked onto the orb, which pulsed in rhythm with her heartbeat.` },  
+
+  { type: 'text', value: `She touched it.\n\nIt glowed brighter.\n\nAnd then—she opened her mouth... and ate it.\n\n{name}Lucas (yelling): "Euvee! No!! That orb—it’s unstable!!"\n\n{name}Assistant-Mira (panicking): "Professor, do something!"\n\n{name}Lucas: "I... I can't... it's already happening!"\n\n` },  
+
+  { type: 'text', value: `The lab filled with blinding light. Machines overloaded. The earth trembled.\n\nWhen the light faded, Lucas ran toward Euvee—afraid of what he’d find.` },  
+
+  { type: 'text', value: `Instead of destruction, he saw rebirth.\n\nEuvee stood calmly—surrounded by a soft, shimmering aura. Her eyes had changed. They now held galaxies inside them.\n\n{name}Researcher-Kai (awe-struck): "Professor... she's transcended."\n\n{name}Lucas (whispering): "No, Kai. She’s become the future."\n\n` },  
+
+  { type: 'img', src: 'img/euvee-mystic.png', alt: 'Mystic Euvee', className: 'sugar-img' },  
+
+  { type: 'text', value: `From that moment, Euvee possessed divine abilities:\n\n– She could heal any wound just by being near.\n– Tired Pokémon woke up feeling refreshed.\n– Sad Trainers smiled again.\n– And when danger approached... she could shift her form entirely.` },  
+
+  { type: 'text', value: `Unlike regular evolutions, Euvee didn’t evolve—she *transformed*. She could mimic shapes and powers of any Pokémon, even Legendary ones, yet still remain herself.\n\n{name}Lucas (amazed): "This... this is beyond evolution. This is life adapting to love and energy..."\n\n{name}Assistant-Mira: "She’s hope... given form."\n\n` },  
+
+  { type: 'text', value: `News of Euvee spread quietly, whispered among researchers and Trainers. Some feared her, others worshiped her. But Lucas kept her hidden, not out of fear—but to protect her.\n\n{name}Lucas: "The world may not be ready for what she is yet. But one day... she will change it."\n\n` },  
+
+  { type: 'text', value: `He began documenting her powers, her shifts, her healing auras. He called it:\nThe Euvee Phenomenon.\n\nHis notes described it not just as a biological event, but an emotional one. Euvee’s power grew stronger when she was surrounded by kindness, calm, or love.` },  
+
+  { type: 'img', src: 'img/euvee-love.png', alt: 'Euvee and Lucas bonding', className: 'sugar-img' },  
+
+  { type: 'text', value: `Years later, Lucas would look back on that moment—when a baby Pokémon ate a glowing orb—and smile.\n\nNot because of science. But because of faith.\n\n{name}Lucas: "She wasn’t born to fight. She was born to heal... to unite... to remind us what it means to be alive."\n\n` },  
+
+  { type: 'img', src: 'img/euvee-legend.png', alt: 'Legendary Euvee', className: 'sugar-img' },  
+
+  { type: 'text', value: `Some journeys are written in stars,\nSome dreams are born from scars,\nIn the heart of light, a new legend flies,\nAnd so... their story continues beyond the skies.` },
+];
+
+        const container = document.getElementById('chapter-text');
+        const nav = document.getElementById('nav-buttons');
+        const skipBtn = document.getElementById('skip-icon');
+        let idxSeg = 0, skipRequested = false, currentTyping;
+
+    
+        skipBtn.addEventListener('click', () => {
+            skipRequested = true;
+            showAll();
+            skipBtn.style.display = 'none';
+    
+        });
+
+        function renderNext() {
+            if (skipRequested) return;
+            if (idxSeg >= content.length) {
+                nav.style.display = 'flex';
+      evoBtn.style.display = 'block';
+      skipBtn.style.display = 'none';
+                return;
+            }
+            const seg = content[idxSeg++];
+            if (seg.type === 'text') {
+                typeWriter(seg.value, renderNext);
+            } else {
+                const img = document.createElement('img');
+                img.src = seg.src;
+                img.alt = seg.alt;
+                img.className = seg.className || 'inline-img sugar-img';
+                container.appendChild(img);
+                setTimeout(renderNext, 300);
+            }
+        }
+
+        function typeWriter(text, callback, pos = 0) {
+            if (skipRequested) return;
+            if (pos < text.length) {
+                if (text.startsWith('{name}', pos)) {
+                    pos += 6;
+                    let name = '';
+                    while (pos < text.length && text[pos] !== ':') name += text[pos++];
+                    pos++;
+                    const span = document.createElement('span');
+                    span.className = `name ${name.trim().toLowerCase()}`;
+                    span.textContent = name + ': ';
+                    container.appendChild(span);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                } else {
+                    const ch = text[pos++];
+                    container.innerHTML += (ch === '\n' ? '<br>' : ch);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                }
+            } else callback();
+        }
+
+        function showAll() {
+            if (currentTyping) clearTimeout(currentTyping);
+            container.innerHTML = '';
+            content.forEach(seg => {
+                if (seg.type === 'text') {
+                    const parts = seg.value.split(/(\{name\}[^:]+:?)/g);
+                    parts.forEach(p => {
+                        if (p.startsWith('{name}')) {
+                            const nm = p.slice(6).replace(/:$/, '');
+                            const span = document.createElement('span');
+                            span.className = `name ${nm.trim().toLowerCase()}`;
+                            span.textContent = nm + ':';
+                            container.appendChild(span);
+                        } else {
+                            container.innerHTML += p.replace(/\n/g, '<br>');
+                        }
+                    });
+                } else {
+                    const img = document.createElement('img');
+                    img.src = seg.src;
+                    img.alt = seg.alt;
+                    img.className = seg.className || 'inline-img sugar-img';
+                    container.appendChild(img);
+                }
+            });
+            nav.style.display = 'flex';
+        }
+
+        renderNext();
+    </script>
+       <script>
+      // Create an invisible audio element (silent initially)
+const bgMusic = new Audio('Music/lugia.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+function tryPlayMusic() {
+  bgMusic.play()
+  
+}
+
+// Ensure music plays after user interaction
+window.addEventListener('click', tryPlayMusic);
+window.addEventListener('keydown', tryPlayMusic);
+window.addEventListener('scroll', tryPlayMusic);
+
+// Stop the music when user clicks on the start button
+document.querySelector('.nav-buttons').addEventListener('click', () => {
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+});
+    </script>
+</body>
+</html>

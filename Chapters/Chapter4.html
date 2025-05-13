@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chapter4: The Legend Of Euvee</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lugrasimo">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(135deg, #f0e6f6, #e0f7fa);
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+        .chapter-container {
+            max-width: 90%;
+            margin: 60px auto;
+            padding: 30px 25px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: fadeIn 1.2s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .chapter-image,
+.inline-img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: floaty 6s ease-in-out infinite;
+}
+
+/* Hover Effects */
+.chapter-image:hover,
+.inline-img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 60px orange;
+}
+
+/* Subtle floating animation */
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+        .pokemon-img {
+            width: 120px;
+            margin: 10px 0;
+        }
+      .sugar-img {
+    display: block;
+    margin: 20px auto; /* centers the image horizontally */
+    width: 70%;
+    max-width: 500px;
+    height: 70%;
+    border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.sugar-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+        .chapter-text {
+            font-size: 1.15rem;
+            color: #333;
+            font-family: 'Marcellus', serif;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+        .name {
+            font-weight: bold;
+            
+        }
+ .name.lucas {
+    background: linear-gradient(to right, #c471f5, #fa71cd); /* Magical violet pink */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.professor-eevee {
+    background: linear-gradient(to right, #00b4db, #0083b0); /* Ocean blue magic */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.traveler1 {
+    background: linear-gradient(to right, #f12711, #f5af19); /* Bright red to sunset orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.traveler2 {
+    background: linear-gradient(to right, #8e2de2, #4a00e0); /* Deep violet shades */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.city-child {
+    background: linear-gradient(to right, #56ccf2, #2f80ed); /* Sky blue to strong blue */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.mother {
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Pinkish red to orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.shopkeeper {
+    background: linear-gradient(to right, #00c9ff, #92fe9d); /* Blue to green pastel fusion */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.wandering-bard {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Light pink to peachy pink */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.old-villager {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4); /* Soft pink magic */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.young-trainer {
+    background: linear-gradient(to right, #00f2fe, #4facfe); /* Fresh cyan to bright blue */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.unknown-voice {
+    background: linear-gradient(to right, #f7971e, #ffd200); /* Vibrant golden orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.hunter-leader {
+    background: linear-gradient(to right, #ff5858, #ffcc70); /* Bright red to soft golden */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+     .title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6A0DAD; /* Royal purple shade */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    animation: titleFadeIn 2s ease-in-out both;
+    text-shadow: 0 2px 8px rgba(106, 13, 173, 0.6);
+}
+
+.title span {
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+}
+
+.title span::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 5px;
+    background: linear-gradient(to right, #8E2DE2, #4A00E0); /* Deep violet to royal blue */
+    border-radius: 3px;
+    animation: underlineGlow 3s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px rgba(74, 0, 224, 0.5);
+}
+
+/* Animation Keyframes */
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes underlineGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(142, 45, 226, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(74, 0, 224, 0.8);
+    }
+}
+
+@keyframes underlineGlow {
+    0% {
+        width: 60%;
+        box-shadow: 0 0 5px rgba(196, 113, 237, 0.4);
+    }
+    100% {
+        width: 100%;
+        box-shadow: 0 0 15px rgba(246, 79, 89, 0.6);
+    }
+}
+
+@keyframes titleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        
+        .skip-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 999;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+        .skip-icon:hover {
+            color: #000;
+        }
+
+
+
+
+/* Nav buttons - side frost wings */
+.nav-buttons {
+  display: none;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto 0;
+}
+
+.nav-button {
+  --base-padding: 14px 30px;
+  padding: var(--base-padding);
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  border: 2px solid currentColor;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Left / Right base colors */
+.nav-button.left { color: #ff7043; }    /* deep orange */
+.nav-button.right { color: #ffca28; }   /* amber */
+
+/* Underlay radial burst */
+.nav-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.3), transparent 60%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: -1;
+}
+
+/* On hover: fill background + burst + glow */
+.nav-button.left:hover {
+  background: linear-gradient(135deg, #ff8a65, #d84315);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff8a65, 0 0 40px #d84315;
+}
+.nav-button.right:hover {
+  background: linear-gradient(135deg, #ffe082, #ffb300);
+  color: #212121;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ffe082, 0 0 40px #ffb300;
+}
+
+/* Trigger the radial burst */
+.nav-button.left:hover::after,
+.nav-button.right:hover::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+/* Continuous slow shimmer overlay */
+.nav-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(60deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%);
+  background-size: 200% 200%;
+  animation: shimmerSlow 4s infinite;
+  z-index: -1;
+}
+
+/* Shimmer animation */
+@keyframes shimmerSlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+html {
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+@media (min-width: 1201px) {
+  .chapter-container {
+    margin: 80px auto;
+    padding: 40px 35px;
+    max-width: 70%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 80%;
+    max-width: 600px;
+  }
+  .chapter-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  .pokemon-img {
+    width: 140px;
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+  .skip-icon {
+    font-size: 2.2rem;
+    bottom: 25px;
+    right: 25px;
+  }
+  .nav-button {
+    padding: 16px 32px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .chapter-container {
+    margin: 70px auto;
+    padding: 35px 30px;
+    max-width: 85%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 85%;
+    max-width: 550px;
+  }
+  .chapter-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  .pokemon-img {
+    width: 130px;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+  .skip-icon {
+    font-size: 2rem;
+  }
+  .nav-button {
+    padding: 15px 30px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapter-container {
+    margin: 60px auto;
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 90%;
+    max-width: 500px;
+  }
+  .chapter-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .pokemon-img {
+    width: 120px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .skip-icon {
+    font-size: 1.9rem;
+    bottom: 20px;
+    right: 20px;
+  }
+  .nav-button {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+  .chapter-container {
+    margin: 40px auto;
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+  .chapter-image,
+  .inline-img,
+  .sugar-img {
+    width: 95%;
+    max-width: 400px;
+  }
+  .chapter-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .pokemon-img {
+    width: 100px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .skip-icon {
+    font-size: 1.7rem;
+    bottom: 15px;
+    right: 15px;
+  }
+  .nav-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="chapter-container">
+        <img src="img/chapter4main.png" alt="Champion Lucas" class="chapter-image">
+        <h1 class="title">Chapter 4 :<span>The Legend of Euvee</span></h1>
+        <div id="chapter-text" class="chapter-text"></div>
+<!-- Evolution Button -->
+
+<!-- Prev/Next Navigation Buttons -->
+<div class="nav-buttons" id="nav-buttons">
+  <button class="nav-button left frosty-glow" onclick="window.location.href='chapter3.html'">Previous Page</button>
+  <button class="nav-button right frosty-glow" onclick="window.location.href='chapter5.html'">Next Page</button>
+</div>
+        
+    </div>
+    <i id="skip-icon" class="bx bx-skip-next skip-icon" title="Skip Animation"></i>
+    <script>
+        const content = [
+{ type: 'text', value: `As Euvee grew, so did her legend. With a shimmering magical aura and an ability to morph into any form—including a fearsome Ultra Beast mode where her form burst into a dazzling spectrum of energy—Euvee embarked on thrilling adventures.\n\n` },
+
+{ type: 'img', src: 'img/euvee-soaring.png', alt: 'Euvee Soaring Over Mountains', className: 'sugar-img' },
+
+{ type: 'text', value: `She traversed enchanted forests where ancient Pokémon slumbered beneath giant crystal trees, her glowing steps lighting the dark paths.\n\n` },
+
+{ type: 'text', value: `{name}Traveler1: "Did you see her at the Crystal Forest? She moved like a dream...!"\n\n{name}Traveler2: "And the flowers... they bloomed where she walked!"\n\n` },
+
+{ type: 'text', value: `In the bustling cities, when sickness and sorrow shadowed the streets, Euvee’s gentle presence healed the hearts of humans and Pokémon alike.\n\n{name}City-Child: "Mama, Mama! The magic fox is here!"\n\n{name}Mother (eyes sparkling): "That’s not magic, my dear. That’s Euvee’s love."\n\n{name}Shopkeeper (placing flowers): "May her light never fade..."\n\n` },
+
+{ type: 'text', value: `Soon, every corner of the realm celebrated the miraculous feats of Euvee. Murals of her adorned village walls, songs of her bravery echoed through valleys, and stories of hope traveled faster than the swiftest Flying-types.\n\n{name}Wandering-Bard (strumming a lute): "Her soul dances in the winds... her spirit hums in every leaf."\n\n{name}Old-Villager: "Mark my words—no creature born of earth or sky matches her kindness."\n\n` },
+
+{ type: 'text', value: `Despite the fame, Euvee remained pure-hearted, always returning to Professor Eevee after every adventure, curling up into his coat just like the day she was born.\n\n{name}Lucas (stroking her fur): "You’ve seen the world, little star. But your light shines brightest here..."\n\n{name}Lucas (whispering): "Stay true. The world needs your heart, not just your powers."\n\n` },
+
+{ type: 'img', src: 'img/lucas-euvee-hug.png', alt: 'Lucas and Euvee Bonding', className: 'sugar-img' },
+
+{ type: 'text', value: `One evening, as Lucas sat recording his notes, a young trainer shyly approached the lab’s door.\n\n{name}Young-Trainer (nervously): "Professor... is it true? Euvee can even heal broken dreams?"\n\n{name}Lucas (smiling warmly): "Hope lives where belief begins. Euvee just reminds us to believe again."\n\n` },
+
+{ type: 'text', value: `But in the unseen corners of the world, shadows moved.\n\n{name}Unknown-Voice (gruffly): "The world bows to her now... but when she kneels to us, true power will be ours."\n\n` },
+
+{ type: 'text', value: `As Euvee healed and shined, an unseen storm was gathering... darker, colder, and merciless.\n\n` },
+{ type: 'img', src: 'img/lucas.png', alt: 'Lucas and Euvee Bonding', className: 'sugar-img' },
+
+{ type: 'text', value: `\n\nSome stars are born to heal a broken sky,\nSome flames are meant to never die,\nEuvee’s journey has just begun to rise,\nBut behind bright smiles, dark fate lies...\n\n` },
+];
+
+        const container = document.getElementById('chapter-text');
+        const nav = document.getElementById('nav-buttons');
+        const skipBtn = document.getElementById('skip-icon');
+        let idxSeg = 0, skipRequested = false, currentTyping;
+
+    
+        skipBtn.addEventListener('click', () => {
+            skipRequested = true;
+            showAll();
+            skipBtn.style.display = 'none';
+    
+        });
+
+        function renderNext() {
+            if (skipRequested) return;
+            if (idxSeg >= content.length) {
+                nav.style.display = 'flex';
+      evoBtn.style.display = 'block';
+      skipBtn.style.display = 'none';
+                return;
+            }
+            const seg = content[idxSeg++];
+            if (seg.type === 'text') {
+                typeWriter(seg.value, renderNext);
+            } else {
+                const img = document.createElement('img');
+                img.src = seg.src;
+                img.alt = seg.alt;
+                img.className = seg.className || 'inline-img sugar-img';
+                container.appendChild(img);
+                setTimeout(renderNext, 300);
+            }
+        }
+
+        function typeWriter(text, callback, pos = 0) {
+            if (skipRequested) return;
+            if (pos < text.length) {
+                if (text.startsWith('{name}', pos)) {
+                    pos += 6;
+                    let name = '';
+                    while (pos < text.length && text[pos] !== ':') name += text[pos++];
+                    pos++;
+                    const span = document.createElement('span');
+                    span.className = `name ${name.trim().toLowerCase()}`;
+                    span.textContent = name + ': ';
+                    container.appendChild(span);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                } else {
+                    const ch = text[pos++];
+                    container.innerHTML += (ch === '\n' ? '<br>' : ch);
+                    currentTyping = setTimeout(() => typeWriter(text, callback, pos), 10);
+                }
+            } else callback();
+        }
+
+        function showAll() {
+            if (currentTyping) clearTimeout(currentTyping);
+            container.innerHTML = '';
+            content.forEach(seg => {
+                if (seg.type === 'text') {
+                    const parts = seg.value.split(/(\{name\}[^:]+:?)/g);
+                    parts.forEach(p => {
+                        if (p.startsWith('{name}')) {
+                            const nm = p.slice(6).replace(/:$/, '');
+                            const span = document.createElement('span');
+                            span.className = `name ${nm.trim().toLowerCase()}`;
+                            span.textContent = nm + ':';
+                            container.appendChild(span);
+                        } else {
+                            container.innerHTML += p.replace(/\n/g, '<br>');
+                        }
+                    });
+                } else {
+                    const img = document.createElement('img');
+                    img.src = seg.src;
+                    img.alt = seg.alt;
+                    img.className = seg.className || 'inline-img sugar-img';
+                    container.appendChild(img);
+                }
+            });
+            nav.style.display = 'flex';
+        }
+
+        renderNext();
+    </script>
+       <script>
+      // Create an invisible audio element (silent initially)
+const bgMusic = new Audio('Music/lugia.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+function tryPlayMusic() {
+  bgMusic.play()
+  
+}
+
+// Ensure music plays after user interaction
+window.addEventListener('click', tryPlayMusic);
+window.addEventListener('keydown', tryPlayMusic);
+window.addEventListener('scroll', tryPlayMusic);
+
+// Stop the music when user clicks on the start button
+document.querySelector('.nav-buttons').addEventListener('click', () => {
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+});
+    </script>
+</body>
+</html>
