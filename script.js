@@ -28,7 +28,7 @@ Are you ready to discover a story where every heartbeat echoes with magic? ðŸŒˆð
   btn.addEventListener('click', () => {
     btn.classList.add('starting');
     setTimeout(() => {
-      window.location.href = "Chapters/Chapter1.html";
+      window.location.href = "/Chapters/Chapter1.html";
     }, 800);
   });
 };
