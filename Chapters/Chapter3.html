@@ -55,14 +55,14 @@
     animation: floaty 6s ease-in-out infinite;
 }
 
-/* Hover Effects */
+
 .chapter-image:hover,
 .inline-img:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 8px 60px cyan;
 }
 
-/* Subtle floating animation */
+
 @keyframes floaty {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
@@ -74,7 +74,7 @@
         }
       .sugar-img {
     display: block;
-    margin: 20px auto; /* centers the image horizontally */
+    margin: 20px auto; 
     width: 70%;
     max-width: 500px;
     height: 70%;
@@ -221,11 +221,11 @@
   transition: transform 0.3s ease;
 }
 
-/* Assign each side its accent color */
+
 .nav-button.left { color: var(--accent); border-color: var(--accent); }
 .nav-button.right { color: var(--accent2); border-color: var(--accent2); }
 
-/* Prism stripe overlay */
+
 .nav-button::before {
   content: '';
   position: absolute;
@@ -243,7 +243,7 @@
   z-index: -1;
 }
 
-/* Bring the stripes in, animate them, and bounce */
+
 .nav-button:hover::before {
   opacity: 1;
   animation: prismFlow 2s linear infinite;
@@ -255,14 +255,14 @@
   animation: bounceEnd 0.6s ease-out 1;
 }
 
-/* Moving gradient stripes */
+
 @keyframes prismFlow {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Final little bounce */
+
 @keyframes bounceEnd {
   0%   { transform: scale(1.1) translateY(-3px); }
   50%  { transform: scale(1.05) translateY(-1px); }
@@ -559,7 +559,7 @@ html {
         renderNext();
     </script>
        <script>
-      // Create an invisible audio element (silent initially)
+      
 const bgMusic = new Audio('Music/lugia.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
@@ -569,12 +569,10 @@ function tryPlayMusic() {
   
 }
 
-// Ensure music plays after user interaction
 window.addEventListener('click', tryPlayMusic);
 window.addEventListener('keydown', tryPlayMusic);
 window.addEventListener('scroll', tryPlayMusic);
 
-// Stop the music when user clicks on the start button
 document.querySelector('.nav-buttons').addEventListener('click', () => {
   bgMusic.pause();
   bgMusic.currentTime = 0;
