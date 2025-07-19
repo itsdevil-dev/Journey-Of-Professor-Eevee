@@ -53,7 +53,7 @@
     cursor: pointer;
 }
 
-/* Hover Effects */
+
 .chapter-image:hover,
 .inline-img:hover {
     transform: scale(1.05) rotateZ(1deg);
@@ -70,7 +70,7 @@
     max-width: 500px;
     height: 50%;
     border-radius: 15px;
-    margin: 20px 0 20px 0; /* removes auto-centering */
+    margin: 20px 0 20px 0; 
     transition: all 0.4s ease-in-out;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -132,13 +132,12 @@
         .skip-icon:hover {
             color: #000;
         }
-/* Hide until ready */
-/* Container */
+
 #evolution-btn {
   display: none;
 }
 
-/* ===== Evolution Button ===== */
+
 .evolution-button {
   display: block;
   margin: 30px auto 0;
@@ -155,7 +154,7 @@
   transition: all 0.4s ease;
 }
 
-/* Shimmer overlay */
+
 .evolution-button::before {
   content: '';
   position: absolute;
@@ -171,7 +170,7 @@
   animation: shimmer 1s forwards;
 }
 
-/* Hover state */
+
 .evolution-button:hover {
   background: linear-gradient(135deg, #ff8a65, #ffb74d);
   color: #ffffff;
@@ -179,12 +178,12 @@
   transform: scale(1.08) rotate(-1deg);
 }
 
-/* Shimmer keyframes */
+
 @keyframes shimmer {
   100% { left: 200%; }
 }
 
-/* ===== Nav Buttons ===== */
+
 .nav-buttons {
   display: none;
   justify-content: center;
@@ -206,21 +205,21 @@
   transition: all 0.4s ease;
 }
 
-/* Left button base color */
+
 .nav-button.left {
   --c: #ba68c8;
   color: var(--c);
   border-color: var(--c);
 }
 
-/* Right button base color */
+
 .nav-button.right {
   --c: #4fc3f7;
   color: var(--c);
   border-color: var(--c);
 }
 
-/* Gradient fill on hover */
+
 .nav-button::before {
   content: '';
   position: absolute;
@@ -235,7 +234,7 @@
   clip-path: circle(150% at 50% 50%);
 }
 
-/* Hover state */
+
 .nav-button:hover {
   color: #fff;
   box-shadow: 0 0 20px var(--c), 0 0 40px var(--c);
@@ -243,19 +242,19 @@
   animation: glowPulse 1.2s infinite alternate;
 }
 
-/* Glow-pulse animation */
+
 @keyframes glowPulse {
   to {
     box-shadow: 0 0 28px var(--c), 0 0 56px var(--c);
   }
 }
 
-    /* 1. फ्लूइड बेसिक फॉन्ट साइज़ */
+    
 html {
   font-size: clamp(14px, 1.6vw, 18px);
 }
 
-/* 2. बड़े स्क्रीन (>1200px) */
+
 @media (min-width: 1201px) {
   .chapter-container {
     margin: 80px auto;
@@ -290,7 +289,6 @@ html {
   }
 }
 
-/* 3. मीडियम डिवाइस (≤1200px) */
 @media (max-width: 1200px) {
   .chapter-container {
     margin: 70px auto;
@@ -323,7 +321,7 @@ html {
   }
 }
 
-/* 4. छोटे डिवाइस (≤768px) */
+
 @media (max-width: 768px) {
   .chapter-container {
     margin: 60px auto;
@@ -358,7 +356,7 @@ html {
   }
 }
 
-/* 5. बहुत छोटे डिवाइस (<500px) */
+
 @media (max-width: 500px) {
   html {
     font-size: 14px;
@@ -403,7 +401,7 @@ html {
         <img src="img/chapter2main.png" alt="Champion Lucas" class="chapter-image">
         <h1 class="title">Chapter 2 :<span>The Road To Indigo Plateau</span></h1>
         <div id="chapter-text" class="chapter-text"></div>
-<!-- Evolution Button -->
+
 <button
   id="evolution-btn"  
   class="evolution-button">
@@ -412,7 +410,7 @@ html {
 
 
 
-<!-- Prev/Next Navigation Buttons -->
+
 <div class="nav-buttons" id="nav-buttons">
   <button class="nav-button left" onclick="window.location.assign('chapter1.html')">Previous Page</button>
   <button class="nav-button right" onclick="window.location.assign('Chapter3.html')">Next Page</button>
@@ -429,13 +427,13 @@ html {
 From the green trails of Viridian Forest to the icy winds of Seafoam Islands, Lucas and Eevee braved every challenge. Harsh storms, tricky caves, and powerful rivals couldn’t stop them. Each battle only made their bond stronger.
 
 Along the journey, Lucas caught powerful companions:` },
-            { type: 'img', src: 'img/charizard.png', alt: 'Charizard' },
+            { type: 'img', src: 'img/Charizard.png', alt: 'Charizard' },
             { type: 'text', value: `– Charmander, who later evolved into Charmeleon and then into the mighty Charizard.` },
             { type: 'img', src: 'img/gardevoir.png', alt: 'Gardevoir' },
             { type: 'text', value: `– Ralts, which hatched from a mysterious egg and evolved into a graceful Gardevoir.` },
-            { type: 'img', src: 'img/dragonite.png', alt: 'Dragonite' },
+            { type: 'img', src: 'img/Dragonite.png', alt: 'Dragonite' },
             { type: 'text', value: `– A wild Dragonair, which evolved into a legendary Dragonite after a fierce battle near the waterfall cliffs.` },
-            { type: 'img', src: 'img/ninetales.png', alt: 'Ninetales' },
+            { type: 'img', src: 'img/Ninetales.png', alt: 'Ninetales' },
             { type: 'text', value: `– Ninetales, whom Lucas rescued from poachers in the Lavender woods.` },
             { type: 'img', src: 'img/gengar.png', alt: 'Gengar' },
             { type: 'text', value: `– Gengar, who once haunted a tower but chose to join Lucas out of respect.
@@ -589,7 +587,7 @@ And so, the story of Lucas, Eevee, and the unknown had only just begun...` }
     </script>
     
     <script>
-      // Create an invisible audio element (silent initially)
+      
 const bgMusic = new Audio('Music/red.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
@@ -599,12 +597,12 @@ function tryPlayMusic() {
   
 }
 
-// Ensure music plays after user interaction
+
 window.addEventListener('click', tryPlayMusic);
 window.addEventListener('keydown', tryPlayMusic);
 window.addEventListener('scroll', tryPlayMusic);
 
-// Stop the music when user clicks on the start button
+
 document.querySelector('.nav-buttons').addEventListener('click', () => {
   bgMusic.pause();
   bgMusic.currentTime = 0;
