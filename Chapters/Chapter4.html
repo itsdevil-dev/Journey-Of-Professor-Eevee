@@ -55,14 +55,14 @@
     animation: floaty 6s ease-in-out infinite;
 }
 
-/* Hover Effects */
+
 .chapter-image:hover,
 .inline-img:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 8px 60px orange;
 }
 
-/* Subtle floating animation */
+
 @keyframes floaty {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
@@ -74,7 +74,7 @@
         }
       .sugar-img {
     display: block;
-    margin: 20px auto; /* centers the image horizontally */
+    margin: 20px auto; 
     width: 70%;
     max-width: 500px;
     height: 70%;
@@ -174,7 +174,7 @@
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #6A0DAD; /* Royal purple shade */
+    color: #6A0DAD; 
     text-align: center;
     margin-bottom: 20px;
     letter-spacing: 1px;
@@ -203,7 +203,7 @@
     box-shadow: 0 0 10px rgba(74, 0, 224, 0.5);
 }
 
-/* Animation Keyframes */
+
 @keyframes titleFadeIn {
     0% {
         opacity: 0;
@@ -263,7 +263,7 @@
 
 
 
-/* Nav buttons - side frost wings */
+
 .nav-buttons {
   display: none;
   justify-content: center;
@@ -287,11 +287,11 @@
   transition: transform 0.3s ease;
 }
 
-/* Left / Right base colors */
-.nav-button.left { color: #ff7043; }    /* deep orange */
-.nav-button.right { color: #ffca28; }   /* amber */
 
-/* Underlay radial burst */
+.nav-button.left { color: #ff7043; }    
+.nav-button.right { color: #ffca28; }   
+
+
 .nav-button::after {
   content: '';
   position: absolute;
@@ -303,7 +303,7 @@
   z-index: -1;
 }
 
-/* On hover: fill background + burst + glow */
+
 .nav-button.left:hover {
   background: linear-gradient(135deg, #ff8a65, #d84315);
   color: #fff;
@@ -317,14 +317,14 @@
   box-shadow: 0 0 20px #ffe082, 0 0 40px #ffb300;
 }
 
-/* Trigger the radial burst */
+
 .nav-button.left:hover::after,
 .nav-button.right:hover::after {
   transform: scale(1.5);
   opacity: 1;
 }
 
-/* Continuous slow shimmer overlay */
+
 .nav-button::before {
   content: '';
   position: absolute;
@@ -335,7 +335,7 @@
   z-index: -1;
 }
 
-/* Shimmer animation */
+
 @keyframes shimmerSlow {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
@@ -522,7 +522,7 @@ html {
 { type: 'text', value: `But in the unseen corners of the world, shadows moved.\n\n{name}Unknown-Voice (gruffly): "The world bows to her now... but when she kneels to us, true power will be ours."\n\n` },
 
 { type: 'text', value: `As Euvee healed and shined, an unseen storm was gathering... darker, colder, and merciless.\n\n` },
-{ type: 'img', src: 'img/lucas.png', alt: 'Lucas and Euvee Bonding', className: 'sugar-img' },
+{ type: 'img', src: 'img/Lucas.png', alt: 'Lucas and Euvee Bonding', className: 'sugar-img' },
 
 { type: 'text', value: `\n\nSome stars are born to heal a broken sky,\nSome flames are meant to never die,\nEuvee’s journey has just begun to rise,\nBut behind bright smiles, dark fate lies...\n\n` },
 ];
