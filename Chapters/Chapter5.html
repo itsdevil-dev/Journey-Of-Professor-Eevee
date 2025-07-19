@@ -55,14 +55,14 @@
     animation: floaty 6s ease-in-out infinite;
 }
 
-/* Hover Effects */
+
 .chapter-image:hover,
 .inline-img:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 8px 60px #E57373;
 }
 
-/* Subtle floating animation */
+
 @keyframes floaty {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
@@ -74,7 +74,7 @@
         }
       .sugar-img {
     display: block;
-    margin: 20px auto; /* centers the image horizontally */
+    margin: 20px auto; 
     width: 70%;
     max-width: 500px;
     height: 70%;
@@ -106,7 +106,7 @@
 }
 
 .name.team-shadow-vortex-leader {
-    background: #8e2de2; /* Purple storm */
+    background: #8e2de2; 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -120,7 +120,7 @@
 .name.grunt-i,
 .name.grunt-ii,
 .name.grunt-iii {
-    background: black; /* Shadow operative */
+    background: black; 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -152,10 +152,10 @@
 }
 
    .name.staryu {
-    color: #40E0D0; /* Turquoise-like, matches its Water-type energy */
+    color: #40E0D0; 
 }
 .name.onix {
-    color: #708090; /* Slate Gray, gives a rocky, sturdy feel */
+    color: #708090;
 }
     
     .name.nurse-joy {
@@ -212,14 +212,14 @@
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #FF6F61; /* Soft coral red for glow */
+    color: #FF6F61; 
     text-align: center;
     margin-bottom: 20px;
     letter-spacing: 1px;
     position: relative;
     animation: titleFadeIn 2s ease-in-out both;
     text-shadow: 0 2px 10px rgba(255, 50, 50, 0.7);
-    background-color: transparent; /* Deep dark red background */
+    background-color: transparent; 
     padding: 20px;
     border-radius: 12px;
 }
@@ -238,13 +238,13 @@
     transform: translateX(-50%);
     width: 110%;
     height: 5px;
-    background: linear-gradient(to right, #8B0000, #B22222); /* Dark blood red to firebrick */
+    background: linear-gradient(to right, #8B0000, #B22222); 
     border-radius: 3px;
     animation: underlineGlow 3s ease-in-out infinite alternate;
     box-shadow: 0 0 15px rgba(178, 34, 34, 0.6);
 }
     
-/* Animation Keyframes */
+
 @keyframes titleFadeIn {
     0% {
         opacity: 0;
@@ -324,11 +324,11 @@
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Left / Right base colors */
+
 .nav-button.left { color: #e53935; border-color: #e53935; }
 .nav-button.right { color: #d32f2f; border-color: #d32f2f; }
 
-/* Jagged glitch border overlay */
+
 .nav-button::before,
 .nav-button::after {
   content: '';
@@ -380,7 +380,7 @@
   100% { transform: translateX(0) skewX(-2deg); }
 }
 
-/* Border flicker/glitch */
+
 @keyframes flicker {
   0%, 100% { opacity: 1; }
   50%      { opacity: 0.5; transform: translate(1px, -1px); }
@@ -531,9 +531,7 @@ html {
         <img src="img/chapter5Main.png" alt="Champion Lucas" class="chapter-image">
         <h1 class="title">Chapter 5 :<span>The Team Shadow Vortex </span></h1>
         <div id="chapter-text" class="chapter-text"></div>
-<!-- Evolution Button -->
 
-<!-- Prev/Next Navigation Buttons -->
 <div class="nav-buttons" id="nav-buttons">
   <button class="nav-button left frosty-glow" onclick="window.location.assign('Chapter4.html')">Previous Page</button>
   <button class="nav-button right frosty-glow" onclick="window.location.assign('Chapter6.html')">Next Page</button>
@@ -620,8 +618,7 @@ const content = [
 { type: 'text', value: '{name}Lieutenant-Nocturne: "I have come to change the fight. Lead me to the cage."\n\n' },
 
 { type: 'text', value: '{name}Team-Shadow-Vortex-Leader: "Just in time."\n\n' },
-
-// New battle dialogue between Professor-Eevee and Evil Team: 
+ 
     { type: 'text', value: '{name}Professor-Eevee: "Nocturne! Your darkness has no place here!"\n\n' }, { type: 'text', value: '{name}Lieutenant-Nocturne: "You dare challenge me, old man?"\n\n' }, { type: 'text', value: '{name}Professor-Eevee: "For every shadow you cast, there is light to break it!"\n\n' }, { type: 'text', value: '{name}Lieutenant-Nocturne: "Then face true despair!"\n\n' }, { type: 'text', value: 'Nocturne fires a wave of dark spikes. Professor-Eevee raises a barrier of light.\n\n' }, { type: 'text', value: '{name}Grunt-I: "The professor shield is too strong!"\n\n' }, { type: 'text', value: '{name}Dr-Mira: "Kai, channel energy through the crystal disruptor!"\n\n' }, { type: 'text', value: '{name}Researcher-Kai: "Disruptor is ready—firing!"\n\n' }, { type: 'text', value: 'A pulse breaks Nocturne dark cloak. He stumbles back, surprised.\n\n' }, { type: 'text', value: '{name}Lieutenant-Nocturne: "Impossible... my power... weakening..."\n\n' }, { type: 'text', value: '{name}Professor-Eevee: "Light always finds a way."\n\n' },
 
 { type: 'text', value: 'Suddenly, the leader raised his arms and released dark energy. The ground shook as his stolen power hit the heroes.\n\n' },
@@ -748,7 +745,7 @@ const content = [
         renderNext();
     </script>
        <script>
-      // Create an invisible audio element (silent initially)
+      
 const bgMusic = new Audio('Music/LavenderTown.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
@@ -758,12 +755,12 @@ function tryPlayMusic() {
   
 }
 
-// Ensure music plays after user interaction
+
 window.addEventListener('click', tryPlayMusic);
 window.addEventListener('keydown', tryPlayMusic);
 window.addEventListener('scroll', tryPlayMusic);
 
-// Stop the music when user clicks on the start button
+
 document.querySelector('.nav-buttons').addEventListener('click', () => {
   bgMusic.pause();
   bgMusic.currentTime = 0;
