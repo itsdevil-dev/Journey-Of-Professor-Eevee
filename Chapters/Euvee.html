@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-  <!-- HTML me <head> ke andar daal dena -->
+  
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Parisienne&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
   <div class="eimage">  
     <img src="img/EuveeImg.png">
   </div>  
-  <!-- HTML -->
+  
 <div class="epilogue-wrapper">
   <div class="epilogue-box">
     <h2 class="epilogue-title">Epilogue Of Story</h2>
@@ -103,14 +103,12 @@
   </p>
      <button class="discover-btn" id="open-modal">Discover More</button>  
   
-  <!-- Modal Structure -->    
+  
       
 </section>  
     
   
-    <!-- Add both classes: modal-overlay aur hide -->
-
- 
+    
     
   <div class="modal-overlay hide" id="island-modal">
     <div class="modal-content">  
@@ -146,7 +144,7 @@
     “They say that in the depths of night, when lanterns rise in unison, Eevee’s fairies touch them and fill them with life.”
   </div>
   
-  <!-- Flickering lantern points -->
+  
   <div class="lanterns">
     <div style="--random:1s;"></div>
     <div style="--random:1.4s;"></div>
@@ -181,7 +179,7 @@
   </section>
   
   
-  <!-- Google Font import -->
+  
 
 <div class="about-professor">
   <h2>About Professor Eevee</h2>
@@ -285,7 +283,7 @@
 
 
 
-// Finnally Fixed Colour Changing Background animation 
+
 
 var gradientTransitionStep = 0;
 
@@ -375,7 +373,7 @@ setInterval(updateGradientBackground, 10); // It Means 10 milliseconds
     particles = [];
     for (let i = 0; i < count; i++) {
       const angle = Math.random() * 2 * Math.PI;
-      const speed = 0.5 + Math.random(); // consistent straight speed
+      const speed = 0.5 + Math.random(); 
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -397,7 +395,7 @@ setInterval(updateGradientBackground, 10); // It Means 10 milliseconds
       p.x += p.dx;
       p.y += p.dy;
 
-      // reset if out of bounds
+      
       if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
         const angle = Math.random() * 2 * Math.PI;
         const speed = 0.5 + Math.random();
@@ -418,7 +416,7 @@ setInterval(updateGradientBackground, 10); // It Means 10 milliseconds
    
   
 <script>
-  // JS to assign random flicker durations (0.8s to 1.6s)
+  
 document.addEventListener('DOMContentLoaded', () => {
   const lanterns = document.querySelectorAll('.lanterns div');
   lanterns.forEach(el => {
@@ -430,17 +428,17 @@ document.addEventListener('DOMContentLoaded', () => {
 const closeModalBtn = document.getElementById('close-modal');
 const modalOverlay = document.getElementById('island-modal');
 
-// Open पर सिर्फ class जोड़ो
+
 openModalBtn.addEventListener('click', () => {
   modalOverlay.classList.add('open');
 });
 
-// Close पर class हटाओ
+
 closeModalBtn.addEventListener('click', () => {
   modalOverlay.classList.remove('open');
 });
 
-// बैकग्राउंड पे click करने से भी बंद हो जाए
+
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) {
     modalOverlay.classList.remove('open');
