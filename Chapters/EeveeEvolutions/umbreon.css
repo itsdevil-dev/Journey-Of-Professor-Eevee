@@ -159,7 +159,7 @@ footer button:hover {
 }
 
 
-/* Small devices: less than 500px */
+
 @media (max-width: 31.25rem) {
   body { font-size: 0.9rem; }
   .umbreon-header { padding: 1rem 0.3125rem; }
@@ -193,7 +193,7 @@ footer button:hover {
   .gallery .image-grid { gap: 0.625rem; }
 }
 
-/* Medium devices: 600px and up */
+
 @media (min-width: 37.5rem) {
   body { font-size: 1rem; }
   .umbreon-header { padding: 1.5rem 0.625rem; }
@@ -222,7 +222,7 @@ footer button:hover {
   .gallery .image-grid { gap: 0.875rem; }
 }
 
-/* Large devices: 800px and up */
+
 @media (min-width: 50rem) {
   body { font-size: 1.1rem; }
   .umbreon-header { padding: 1.25rem 0.625rem; }
