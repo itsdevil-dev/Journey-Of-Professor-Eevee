@@ -491,9 +491,7 @@ html {
         <img src="img/chapter4main.png" alt="Champion Lucas" class="chapter-image">
         <h1 class="title">Chapter 4 :<span>The Legend of Euvee</span></h1>
         <div id="chapter-text" class="chapter-text"></div>
-<!-- Evolution Button -->
 
-<!-- Prev/Next Navigation Buttons -->
 <div class="nav-buttons" id="nav-buttons">
   <button class="nav-button left frosty-glow" onclick="window.location.assign('Chapter3.html')">Previous Page</button>
   <button class="nav-button right frosty-glow" onclick="window.location.assign('Chapter5.html')">Next Page</button>
@@ -615,7 +613,7 @@ html {
         renderNext();
     </script>
        <script>
-      // Create an invisible audio element (silent initially)
+      
 const bgMusic = new Audio('Music/lugia.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
@@ -625,12 +623,12 @@ function tryPlayMusic() {
   
 }
 
-// Ensure music plays after user interaction
+
 window.addEventListener('click', tryPlayMusic);
 window.addEventListener('keydown', tryPlayMusic);
 window.addEventListener('scroll', tryPlayMusic);
 
-// Stop the music when user clicks on the start button
+
 document.querySelector('.nav-buttons').addEventListener('click', () => {
   bgMusic.pause();
   bgMusic.currentTime = 0;
