@@ -89,7 +89,6 @@
 .bubble { position: fixed; bottom: -60px; border-radius: 50%; animation: rise 12s ease-in infinite; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 2s ease-out; }
 @keyframes rise { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 0.4; } 50% { opacity: 0.8; } 80% { opacity: 0.4; } 100% { transform: translateY(-120vh); opacity: 0; } }
 
-/* Small devices: less than 500px */
 @media (max-width: 31.25rem) {
   html { font-size: 0.9rem; }
   header { padding: 1.5rem 1rem; }
@@ -110,7 +109,6 @@
   .bubble { bottom: -4rem; }
 }
 
-/* Medium devices: 600px and up */
 @media (min-width: 37.5rem) {
   html { font-size: 1rem; }
   header { padding: 2vh 1rem; }
@@ -131,7 +129,6 @@
   .bubble { bottom: -5rem; }
 }
 
-/* Large devices: 800px and up */
 @media (min-width: 50rem) {
   html { font-size: 1.1rem; }
   header { padding: 3vh 1rem; }
@@ -231,7 +228,7 @@
   
 
   <script>
-    // Ripple effect
+  
     const img = document.querySelector('.vaporeon-img');
     img.addEventListener('click', function(e) {
       const rect = img.getBoundingClientRect();
@@ -246,7 +243,6 @@
       setTimeout(() => circle.remove(), 600);
     });
 
-    // Fade-in on scroll
     const faders = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -258,7 +254,6 @@
     }, { threshold: 0.1 });
     faders.forEach(fader => observer.observe(fader));
 
-    // Bubble animation
     for (let i = 0; i < 30; i++) {
       const bubble = document.createElement('div');
       const size = Math.random() * 30 + 20;
