@@ -3,10 +3,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chapter 1 - The Beginning of a Legend</title>
-  <!-- Fonts -->
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lugrasimo">
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Quicksand&display=swap" rel="stylesheet">
-  <!-- Boxicons -->
+  
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">  <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -119,7 +119,7 @@
     
     @keyframes underlineSlide {
       0%{ transform:translateX(0%);} 100%{transform:translateX(10%);}    }
-    /* Skip icon */
+    
     .skip-icon {
       position:fixed; bottom:20px; right:20px;
       font-size:2rem; cursor:pointer; z-index:999; color:#555;
@@ -127,10 +127,7 @@
     }
     .skip-icon:hover { color:#000; }
     
-    /* 1. फ्लूइड बेसिक फॉन्ट साइज */
-
-
-/* 2. बड़े स्क्रीन (>1200px) */
+    
 @media (min-width: 1201px) {
   .chapter-container {
     margin: 80px auto;
@@ -155,7 +152,7 @@
   }
 }
 
-/* 3. मीडियम डिवाइस (≤1200px) */
+
 @media (max-width: 1200px) {
   .chapter-container {
     margin: 70px auto;
@@ -180,7 +177,7 @@
   }
 }
 
-/* 4. छोटे डिवाइस (≤768px) */
+
 @media (max-width: 768px) {
   .chapter-container {
     margin: 60px auto;
@@ -205,7 +202,7 @@
   }
 }
 
-/* 5. बहुत छोटे डिवाइस (<500px) */
+
 @media (max-width: 500px) {
   html {
     font-size: 14px;
@@ -249,7 +246,8 @@
       <button class="nav-button left"  onclick="window.location.assign('/')">Previous Page</button>
       <button class="nav-button right" onclick="window.location.assign('Chapter2.html')">Next Page</button>
     </div>
-  </div>  <!-- Skip typing icon --><i id="skip-icon" class="bx bx-skip-next skip-icon" title="Skip Animation"></i>
+  </div> 
+  <i id="skip-icon" class="bx bx-skip-next skip-icon" title="Skip Animation"></i>
 
   <script>
     const content = [
@@ -269,7 +267,7 @@
     let skipRequested = false;
     let currentTyping = null;
 
-    // Skip handler
+    
     skipBtn.addEventListener('click', () => {
       skipRequested = true;
       dumpAll();
@@ -353,11 +351,11 @@
       nav.style.display = 'flex';
     }
 
-    // Start rendering
+    
     renderNext();
   </script>
   <script>
-  // Create an invisible audio element (silent initially)
+
 const bgMusic = new Audio('Music/1.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
@@ -367,12 +365,12 @@ function tryPlayMusic() {
   
 }
 
-// Ensure music plays after user interaction
+
 window.addEventListener('click', tryPlayMusic);
 window.addEventListener('keydown', tryPlayMusic);
 window.addEventListener('scroll', tryPlayMusic);
 
-// Stop the music when user clicks on the start button
+
 document.querySelector('.nav-buttons').addEventListener('click', () => {
   bgMusic.pause();
   bgMusic.currentTime = 0;
