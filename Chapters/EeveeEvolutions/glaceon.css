@@ -159,7 +159,6 @@ footer button:hover {
 }
 
 
-/* Keep your previous CSS and ADD the below */
 
 .fade-in {
   opacity: 0;
@@ -202,7 +201,6 @@ footer button:hover {
   box-shadow: 0 0 20px #4dd0e1;
 }
 
-/* Scroll animation using Intersection Observer */
 
 
 .gallery .image-grid {
@@ -223,7 +221,7 @@ footer button:hover {
   transform: scale(1.05);
 }
 
-/* Small devices: less than 500px */
+
 @media (max-width: 500px) {
   body {
     font-size: 0.9em;
@@ -278,7 +276,7 @@ footer button:hover {
   }
 }
 
-/* Medium devices: 600px and up */
+
 @media (min-width: 600px) {
   body {
     font-size: 1em;
@@ -324,7 +322,7 @@ footer button:hover {
   }
 }
 
-/* Large devices: 800px and up */
+
 @media (min-width: 800px) {
   body {
     font-size: 1.1em;
