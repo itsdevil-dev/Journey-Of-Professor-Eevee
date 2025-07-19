@@ -55,14 +55,14 @@
     animation: floaty 6s ease-in-out infinite;
 }
 
-/* Hover Effects */
+
 .chapter-image:hover,
 .inline-img:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 8px 60px #E57373;
 }
 
-/* Subtle floating animation */
+
 @keyframes floaty {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
@@ -74,7 +74,7 @@
         }
       .sugar-img {
     display: block;
-    margin: 20px auto; /* centers the image horizontally */
+    margin: 20px auto; 
     width: 70%;
     max-width: 500px;
     height: 70%;
@@ -106,7 +106,7 @@
 }
 
 .name.team-shadow-vortex-leader {
-    background: #8e2de2; /* Purple storm */
+    background: #8e2de2; 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -120,7 +120,7 @@
 .name.grunt-i,
 .name.grunt-ii,
 .name.grunt-iii {
-    background: black; /* Shadow operative */
+    background: black; 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -140,53 +140,53 @@
 
 
 .name.dr-mira {
-    background: linear-gradient(to right, #f7971e, #ffd200); /* Golden healer */
+    background: linear-gradient(to right, #f7971e, #ffd200); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .name.researcher-kai {
-    background: linear-gradient(to right, #00c6ff, #0072ff); /* Electric insight */
+    background: linear-gradient(to right, #00c6ff, #0072ff); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
    .name.staryu {
-    color: #40E0D0; /* Turquoise-like, matches its Water-type energy */
+    color: #40E0D0; 
 }
 .name.onix {
-    color: #708090; /* Slate Gray, gives a rocky, sturdy feel */
+    color: #708090; 
 }
     
     .name.nurse-joy {
         color: pink;
     }
 .name.trainer-red {
-    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Fiery spirit */
+    background: linear-gradient(to right, #ff416c, #ff4b2b); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .name.charizard {
-    background: linear-gradient(to right, #fe8c00, #e52d27); /* Flame roar */
+    background: linear-gradient(to right, #fe8c00, #e52d27); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .name.dragonite {
-    background: linear-gradient(to right, #a8c0ff, #3f2b96); /* Sky guardian */
+    background: linear-gradient(to right, #a8c0ff, #3f2b96); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .name.ninetales {
-    background: linear-gradient(to right, #f8ffae, #43c6ac); /* Mystic ember */
+    background: linear-gradient(to right, #f8ffae, #43c6ac); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .name.gardevoir {
-    background: linear-gradient(to right, #7f00ff, #e100ff); /* Psychic grace */
+    background: linear-gradient(to right, #7f00ff, #e100ff); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -198,7 +198,7 @@
         color: grey;
     }
 .name.gengar {
-    background: linear-gradient(to right, #654ea3, #eaafc8); /* Shadow grin */
+    background: linear-gradient(to right, #654ea3, #eaafc8); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -217,7 +217,7 @@
     font-family: 'Pacifico', cursive;
     font-size: 2.8rem;
     font-weight: 700;
-    color: #B388EB; /* Soft magical lavender */
+    color: #B388EB; 
     text-align: center;
     margin-bottom: 20px;
     letter-spacing: 1px;
@@ -249,7 +249,7 @@
     box-shadow: 0 0 12px rgba(255, 128, 255, 0.6);
 }
 
-/* Animation Keyframes */
+
 @keyframes titleFadeIn {
     0% {
         opacity: 0;
@@ -288,7 +288,7 @@
   justify-content: center;
   gap: 30px;
   margin: 30px auto 0;
-  perspective: 800px; /* for 3D tilt */
+  perspective: 800px; 
 }
 
 .nav-button {
@@ -310,11 +310,10 @@
   cursor: pointer;
 }
 
-/* Left/Right alternate accents */
 .nav-button.left  { --accent1: #a18cd1; --accent2: #fbc2eb; }
 .nav-button.right { --accent1: #84fab0; --accent2: #8fd3f4; }
 
-/* gradient fill beneath */
+
 .nav-button::after {
   content: '';
   position: absolute;
@@ -325,7 +324,7 @@
   z-index: -1;
 }
 
-/* shining sweep */
+
 .nav-button::before {
   content: '';
   position: absolute;
@@ -338,7 +337,7 @@
   z-index: 1;
 }
 
-/* hover: fill, shine, tilt */
+
 .nav-button:hover {
   clip-path: none;
   transform: rotateX(8deg) rotateY(-8deg) scale(1.05);
@@ -502,9 +501,7 @@ html {
         <img src="img/chapter6main.png" alt="Champion Lucas" class="chapter-image">
         <h1 class="title">Chapter 6 :<span>The Locket and the Legend </span></h1>
         <div id="chapter-text" class="chapter-text"></div>
-<!-- Evolution Button -->
 
-<!-- Prev/Next Navigation Buttons -->
 <div class="nav-buttons" id="nav-buttons">
   <button class="nav-button left frosty-glow" onclick="window.location.assign('Chapter5.html')">Previous Page</button>
   <button class="nav-button right frosty-glow" onclick="window.location.assign('Euvee.html')">Last Page</button>
@@ -515,26 +512,24 @@ html {
     <script>
         
 const content = [
-  // Chapter 6: A New Beginning
-
-  // Battle Aftermath & Teleportation
+  
   { type: 'text', value: 'The final echoes of battle faded into silence. Fire and lightning dissipated into the ether as heroes stood victorious—but exhausted. A blinding flash enveloped them all.' + '\n\n' },
   { type: 'text', value: 'When their vision cleared, they found themselves in the grand hall of Professor-Eevee’s hidden laboratory. Crystal lamps cast soft prisms of light across gleaming instruments and bubbling vials.' + '\n\n' },
 
-  // Initial Reactions
+  
   { type: 'text', value: '{name}Dr-Mira: "What just happened? One moment we were on the battlefield… the next, we’re here!"' + '\n\n' },
   { type: 'text', value: '{name}Researcher-Kai: "The teleportation matrix you designed, Professor… it worked flawlessly under pressure."' + '\n\n' },
     { type: 'img', src: 'img/lab.png', alt: 'Euvee creates island', className: 'sugar-img' },
  
   { type: 'text', value: '{name}Trainer-Red: "I never imagined a safe haven during the fight. This lab… it’s a marvel."' + '\n\n' },
   
-  // Professor’s Welcome & Warning
+  
   { type: 'text', value: 'Professor-Eevee appeared from behind a tall console, eyes filled with relief—and concern.' + '\n\n' },
   { type: 'text', value: '{name}Professor-Eevee: "Everyone is alive… thank Arceus. But I have grave news: the forces of darkness saw Euvee’s power and will never rest until they capture her."' + '\n\n' },
   { type: 'text', value: '{name}Officer-Jenny: "Kidnap her? But why? She’s saved the world!"' + '\n\n' },
   { type: 'text', value: '{name}Professor-Eevee: "Because Euvee embodies the purest psychic energy—enough to turn the tide of any war. In the wrong hands, she could become a weapon of unimaginable destruction."' + '\n\n' },
 
-  // Emotional Reactions & Strategy
+
   { type: 'text', value: '{name}Dr-Mira: *voice trembling* "We can’t let that happen. She’s like family to us."' + '\n\n' },
   { type: 'text', value: '{name}Researcher-Kai: "Professor, what can we do?"' + '\n\n' },
   { type: 'text', value: '{name}Professor-Eevee: "Euvee must go to a place beyond reach—an island lost to maps, hidden by her power."' + '\n\n' },
@@ -542,23 +537,23 @@ const content = [
 
     { type: 'img', src: 'img/euvee-island.png', alt: 'Euvee creates island', className: 'sugar-img' },
  
-  // Euvee’s Purpose
+
   { type: 'text', value: 'Euvee stepped forward, her fur glowing faintly. She let out a soft, determined bark that filled the room with warmth.' + '\n\n' },
   { type: 'text', value: '{name}Euvee: *barks resolutely*' + '\n\n' },
   { type: 'text', value: '{name}Professor-Eevee: "My dear star, you must create that island at the center of the vast ocean. No force can breach it unless a trainer’s heart shines true."' + '\n\n' },
   { type: 'text', value: '{name}Officer-Jenny: "It sounds impossible… but if anyone can do it, it’s you, Euvee."' + '\n\n' },
 
-  // Emotional Preparation
+
   { type: 'text', value: 'Tears welled in Dr-Mira’s eyes as she brushed a strand of hair from Euvee’s forehead.' + '\n\n' },
   { type: 'text', value: '{name}Dr-Mira: "Promise me you’ll be safe… and that you’ll remember us."' + '\n\n' },
   { type: 'text', value: 'Euvee nuzzled Mira’s hand, her eyes glistening with emotion. Researcher-Kai placed a gentle paw on Euvee’s back.' + '\n\n' },
   { type: 'text', value: '{name}Researcher-Kai: "Your light gave us hope. Let it shine as a beacon for true trainers."' + '\n\n' },
 
-  // Euvee Creates the Island
+
   { type: 'text', value: 'Under the domed ceiling, Euvee closed her eyes. Psychic energy swirled around her, lifting stone and water in a silent dance.' + '\n\n' },
    { type: 'text', value: 'Within moments, the ocean beyond the lab’s reinforced viewport rippled… and a new island emerged, crowned with glowing flowers and whispering palms.' + '\n\n' },
 
-  // Farewell & Gift
+  
   { type: 'text', value: '{name}Trainer-Red: "It’s beautiful… she did it!"' + '\n\n' },
   { type: 'text', value: 'Euvee trotted back, a small, glowing locket hanging from her mouth. She dropped it into Professor-Eevee’s outstretched hand.' + '\n\n' },
   { type: 'img', src: 'img/magical-locket.png', alt: 'Glowing Magical Locket', className: 'sugar-img' },
@@ -568,14 +563,14 @@ const content = [
   { type: 'text', value: '{name}Dr-Mira: "And only a trainer with a heart as pure as yours can see its glow on any map."' + '\n\n' },
   { type: 'text', value: '{name}Professor-Eevee: "Whenever danger stirs in the Pokémon world—or in my heart—open this locket, and I will come."' + '\n\n' },
 
-  // Final Goodbye
+
   { type: 'text', value: 'Silence held them all for a heartbeat, then Euvee looked up one last time. Her eyes shone with gratitude and love.' + '\n\n' },
   { type: 'text', value: '{name}Euvee: *joyful bark*' + '\n\n' },
   { type: 'text', value: '{name}Officer-Jenny: "Goodbye, Euvee. May your island remain forever safe."' + '\n\n' },
   { type: 'text', value: '{name}Trainer-Red: "Farewell, friend. We are your truehearted guardians always."' + '\n\n' },
   { type: 'img', src: 'img/euvee-departure.png', alt: 'Euvee Leaving Lab into Night', className: 'sugar-img' },
 
-  // Epilogue: Discovery of the Island
+
   { type: 'text', value: 'At dawn, the heroes set sail toward the new isle. Mist curled around its shores, and bioluminescent petals fluttered in the breeze.' + '\n\n' },
   { type: 'text', value: '{name}Trainer-Red: "I can almost feel her spirit here…"' + '\n\n' },
   { type: 'text', value: 'They placed the locket on an ancient stone altar carved with runes of protection. The gem blazed like morning sun.' + '\n\n' },
@@ -584,7 +579,7 @@ const content = [
   { type: 'text', value: '{name}Euvee: joyful bark' + '\n\n' },
   { type: 'text', value: '{name}Professor-Eevee ( tears of eyes) : "We will miss you Euvee !! \nGood Bye Euvee."' + '\n\n' },
 
-  // Closing Reflection
+
 { type: 'text', value: 'And so, in the heart of the ocean deep,\nA secret place began to breathe and sleep.\nGuarded by loyalty, lit by pure love’s flame,\nOnly true hearts could find its name.\nA home of hope where dreams would curl,\nFor every Pokémon and trainer in the world.\n\n' }
     ];
 
@@ -678,7 +673,7 @@ const content = [
         renderNext();
     </script>
        <script>
-      // Create an invisible audio element (silent initially)
+      
 const bgMusic = new Audio('Music/pokemon_theme.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
@@ -688,12 +683,12 @@ function tryPlayMusic() {
   
 }
 
-// Ensure music plays after user interaction
+
 window.addEventListener('click', tryPlayMusic);
 window.addEventListener('keydown', tryPlayMusic);
 window.addEventListener('scroll', tryPlayMusic);
 
-// Stop the music when user clicks on the start button
+
 document.querySelector('.nav-buttons').addEventListener('click', () => {
   bgMusic.pause();
   bgMusic.currentTime = 0;
