@@ -1,4 +1,3 @@
-// Snowflake Animation (same as before)
 document.addEventListener("DOMContentLoaded", () => {
   for (let i = 0; i < 10; i++) {
     const snow = document.createElement("div");
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(snow);
   }
 
-  // Scroll-based fade-in effect
   const fadeIns = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
