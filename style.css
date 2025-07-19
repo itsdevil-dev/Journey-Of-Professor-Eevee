@@ -126,7 +126,7 @@ html, body {
   animation: glowPulse 2s infinite ease-in-out;
 }
 
-/* Pulsing glow effect */
+
 @keyframes glowPulse {
   0%, 100% {
     box-shadow: 0 0 20px rgba(138, 46, 226, 0.6), 0 0 40px rgba(106, 75, 255, 0.4);
@@ -216,12 +216,12 @@ html, body {
 
 
 
-/* Show popup on hover */
+
 .info-popup-wrapper:hover #popup-toggle {
   pointer-events: auto;
 }
 
-/* Show popup when input is checked */
+
 #popup-toggle:checked ~ .popup-ad {
   transform: translate(-50%, -50%) scale(1);
 }
@@ -319,7 +319,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Gradient shimmer */
+
 
 .magical-glow {
   position: absolute;
@@ -368,7 +368,7 @@ html, body {
   }
 }
 
-/* 3. मीडियम डिवाइस (≤1200px) */
+
 @media (max-width: 1200px) {
   .entry-content {
     padding: 40px;
@@ -389,7 +389,7 @@ html, body {
   }
 }
 
-/* 4. छोटे डिवाइस (≤768px) */
+
 @media (max-width: 768px) {
   .entry-content {
     padding: 30px;
@@ -410,10 +410,10 @@ html, body {
   }
 }
 
-/* 5. बहुत छोटे डिवाइस (<500px) */
+
 @media (max-width: 500px) {
   html {
-    /* अगर क्लैंप ना रखें तो यहाँ छोटा फॉन्ट सैट करें */
+    
     font-size: 14px;
   }
   .entry-content {
