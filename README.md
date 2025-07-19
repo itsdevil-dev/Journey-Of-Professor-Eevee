@@ -67,7 +67,7 @@ And To My Love For Storytelling Through Code.
 
 - 💻 Developed And Designed By: **Murali**  
 - 🦊 Characters By: **Inspired From Pokémon Universe**  
-- 🧁 Special Thanks: To Shalini & Sangliyana ( Greatest Coders )
+- 🧁 Special Thanks: To Shalini & Sangliyana (Greatest Coders)
 - 🎶 Music Credits: Lofi Tracks (Pokémon Style)  
 - ☁️ Hosted On: **Vercel**
 
