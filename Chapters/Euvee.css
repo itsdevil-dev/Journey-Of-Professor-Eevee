@@ -23,7 +23,7 @@ body {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
-/* Magical Underline */
+
 .title-txt::after {
   content: "";
   position: absolute;
@@ -58,7 +58,7 @@ body {
   transition: all 0.5s ease;
 }
 
-/* Hover effect */
+
 .eimage img:hover {
   transform: scale(1.05);
   filter: brightness(1.2);
@@ -67,7 +67,7 @@ body {
 }
   
 
-/* Import your favourite fonts */
+
 
 .epilogue-wrapper {
   display: flex;
@@ -113,7 +113,7 @@ body {
   }
 }
 
-/* Beautiful gradient underline */
+
 .epilogue-title::after {
   content: '';
   display: block;
@@ -125,7 +125,7 @@ body {
 }
 
 .epilogue-content {
-  color: #4a4a4a; /* Slightly lighter gray */
+  color: #4a4a4a; 
   font-weight: 300;
   line-height: 1.6;
   font-size: 1rem;
@@ -155,7 +155,7 @@ body {
       position: relative;
     }
 
-    /* Underline decoration */
+    
     .about-euvee h2::after {
       content: '';
       display: block;
@@ -190,27 +190,27 @@ body {
 
 
 .section-image {
-  perspective: 1000px; /* 3D depth */
+  perspective: 1000px; 
 }
 
 .section-image img {
   width: 100%;
   border-radius: 15px;
-  display: block;              /* Makes the img a block element */
-  margin: 1rem auto;           /* Centers the img horizontally */
+  display: block;              
+  margin: 1rem auto;           
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.50);
   transition: transform 0.7s ease, filter 0.8s ease, box-shadow 0.7s ease;
   transform-style: preserve-3d;
 }
 
 .section-image img:hover {
-  transform: rotateZ(3.8deg) scale(1.05);  /* thoda right rotate + zoom */
+  transform: rotateZ(3.8deg) scale(1.05);  
   filter: brightness(1.2);       
-      /* brightness increase */
+      
       box-shadow: 0 8px 64px rgba(0, 0, 0, 0.50);
 }
 
-/* Title with Gradient Animation */
+
 .temple-title {
   font-family: 'Parisienne', cursive;
   font-size: 2.5rem;
@@ -224,7 +224,7 @@ body {
   animation: rainbowFlow 10s ease infinite;
 }
 
-/* Fancy Underline */
+
 .temple-title::after {
   content: "";
   display: block;
@@ -236,7 +236,7 @@ body {
   box-shadow: 0 0 10px #fff;
 }
 
-/* Keyframe Animation */
+
 @keyframes rainbowFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -344,7 +344,7 @@ body {
   animation: gradientShift 5s ease infinite;
 }
 
-/* Glowing aura ring */
+
 .discover-btn::before {
   content: '';
   position: absolute;
@@ -357,7 +357,7 @@ body {
   z-index: -2;
 }
 
-/* Drifting sparkles */
+
 .discover-btn::after {
   content: '';
   position: absolute;
@@ -369,13 +369,13 @@ body {
   z-index: -1;
 }
 
-/* Hover effects */
+
 .discover-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 30px rgba(255, 180, 180, 0.7), 0 0 60px rgba(255, 180, 180, 0.5);
 }
 
-/* Keyframes */
+
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
@@ -414,7 +414,7 @@ body {
   }
 }
   
-/* Modal 기본 숨김 + transition सेटअप */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -429,13 +429,13 @@ body {
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-/* 열릴 때 적용될 class */
+
 .modal-overlay.open {
   opacity: 1;
   visibility: visible;
 }
 
-/* Modal 내용의 스케일 애니메이션 */
+
 .modal-content {
   width: 80%;
   max-width: 600px;
@@ -446,18 +446,18 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   transform: scale(0.8);
   transition: transform 0.4s ease;
-  /* optional: 시작 시 opacity 살짝 줘도 좋아요 */
+  
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* open 상태의 modal-content */
+
 .modal-overlay.open .modal-content {
   transform: scale(1);
   opacity: 1;
 }
 
-/* Close 버튼 hover 개선 (optional) */
+
 .close-btn {
   position: absolute;
   top: 16px; right: 16px;
@@ -547,7 +547,7 @@ body {
   color: #f5f5fa;
 }
 
-/* Magical drifting sparkles */
+
 .festival-eternal-light::after {
   content: '';
   position: absolute;
@@ -614,7 +614,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Image styling */
+
 .festival-eternal-light .fe-image {
   text-align: center;
   margin: 2rem 0;
@@ -632,7 +632,7 @@ body {
       filter: brightness(1.2);
 }
 
-/* Paragraphs */
+
 .festival-eternal-light p {
   line-height: 1.7;
   font-size: 1.1rem;
@@ -648,26 +648,18 @@ body {
   color: #1565C0;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
-  
-  /* Gradient border glowing */
   border-left: 4px solid;
-  border-image: linear-gradient(to bottom, #b39ddb, #ede7f6) 1;
-  
-  /* Subtle frosted background */
+  border-image: linear-gradient(to bottom, #b39ddb, #ede7f6) 1;  
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(4px);
-  
-  /* Text glow + shadow */
   text-shadow:
     0 0 6px rgba(224, 215, 255, 0.7),
     0 0 12px rgba(224, 215, 255, 0.5);
-  
-  /* Shimmer animation */
   animation: shimmer 4s infinite ease-in-out;
   overflow: hidden;
 }
 
-/* Little sparkle icon before text */
+
 .festival-eternal-light .lore::before {
   content: "✨";
   position: absolute;
@@ -677,7 +669,7 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Hover boost of magic */
+
 .festival-eternal-light .lore:hover {
   transform: scale(1.02);
   text-shadow:
@@ -685,20 +677,20 @@ body {
     0 0 20px rgba(224, 215, 255, 0.7);
 }
 
-/* Shimmer keyframes */
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   50% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
-/* Float keyframes for the sparkle */
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
 
-/* Lantern container styling */
+
 .lanterns {
   display: flex;
   gap: 20px;
@@ -707,7 +699,7 @@ body {
   background: transparent;
 }
 
-/* Each lantern point */
+
 .lanterns div {
   width: 20px;
   height: 50px;
@@ -717,7 +709,7 @@ body {
   animation: flicker var(--random) infinite ease-in-out alternate;
 }
 
-/* Flicker keyframes */
+
 @keyframes flicker {
   0%   { opacity: 1; transform: translateY(0) scaleY(1); }
   50%  { opacity: 0.5; transform: translateY(-2px) scaleY(1.05); }
@@ -798,7 +790,7 @@ body {
       text-align: justify;
       margin-bottom: 1.5rem;
     }
-    /* Final magical flourish */
+    
     .ultra-guardian .finale {
       text-align: center;
       font-style: italic;
@@ -830,7 +822,7 @@ body {
   overflow: hidden;
 }
 
-/* Sparkle Animation Overlay */
+
 .about-professor::before {
   content: "";
   position: absolute; top: 0; left: 0;
@@ -850,17 +842,14 @@ body {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  /* Vibrant gradient for text */
   background: linear-gradient(45deg, #ff5f6d, #ffc371, #24c6dc, #514a9d);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* Faster, smoother animation */
   animation: gradientText 5s ease infinite;
   position: relative;
 }
 
-/* Animated Underline with matching vibrant colors */
 .underline {
   width: 160px;
   height: 4px;
@@ -918,16 +907,15 @@ body {
 .about-professor p {
   line-height: 1.7;
   font-size: 1.15rem;
-  color: #444;              /* base text colour */
+  color: #444;              
   max-width: 600px;
       
       
   margin: 0 auto;
 }
 
-/* strong styling */
 .about-professor p strong {
-  color: #E07A5F;          /* warm terracotta */
+  color: #E07A5F;          
   font-weight: 700;
   background: rgba(224, 122, 95, 0.1);
   padding: 2px 4px;
@@ -938,9 +926,9 @@ body {
   background: rgba(224, 122, 95, 0.2);
 }
 
-/* em styling */
+
 .about-professor p em {
-  color: #3D5A80;          /* calm navy-teal */
+  color: #3D5A80;          
   font-style: italic;
   text-decoration: underline;
   transition: color 0.3s ease;
@@ -949,7 +937,7 @@ body {
   color: #2C3E50;
 }
 
-/* Optional Hover Magic: Glow on hover */
+
 .about-professor:hover .professor-image img {
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(255, 154, 158, 0.9),
@@ -988,7 +976,6 @@ body {
       border: 2px solid rgba(255,255,255,0.5);
       object-fit: cover;
       margin-bottom: 1rem;
-      
       transition: all 0.3s ease;
     }
     
@@ -997,6 +984,7 @@ body {
     filter: brightness(1.1);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   }
+
     .name {
   position: relative;
   font-family: 'Cinzel Decorative', cursive;
@@ -1129,7 +1117,7 @@ canvas {
   z-index: 1;
 }
 
-/* Footer text styles */
+
 .footer-text {
   margin: 8px 0;
   font-family: 'Merienda', cursive;
@@ -1140,7 +1128,7 @@ canvas {
   text-shadow: 0 0 5px rgba(255,255,255,0.7);
 }
 
-/* Heart beat tweak */
+
 .heart {
   display: inline-block;
   animation: beat 1s ease-in-out infinite;
@@ -1154,17 +1142,14 @@ canvas {
 
 
 
-/* Make the footer text and heart appear above particles */
 .footer-content {
   position: relative;
   z-index: 1;
 }
 
-/* ===============================
-   Devices under 500px width
-   =============================== */
+
 @media only screen and (max-width: 500px) {
-  /* Headlines */
+  
   .title-txt { font-size: 1.5rem !important; }
   .epilogue-title { font-size: 1.5rem !important; }
   .about-euvee h2,
@@ -1178,7 +1163,7 @@ canvas {
   .festival-eternal-light .lore {
   	font-size: 0.6rem;
   	}
-  /* Paragraphs & content */
+  
   .epilogue-box {
   width: 67%;
   }
@@ -1212,16 +1197,16 @@ canvas {
   .about-professor p,
   p { font-size: 0.6rem !important; line-height: 1.4 !important; }
 
-  /* Images */
+  
   img { max-width: 70% !important; height: auto !important; }
 
-  /* Buttons */
+  
   .discover-btn { padding: 0.6rem 1.5rem !important; font-size: 0.7rem !important; }
 
-  /* Modal */
+  
   .modal-content { max-width: 70% !important; padding: 1rem !important; }
 
-  /* Boxes ko almost full width do */
+  
   .island-sanctuary,
   .festival-eternal-light,
   
@@ -1235,11 +1220,10 @@ canvas {
 
 }
 
-/* ===============================
-   Devices above 650px width
-   =============================== */
+
+
 @media only screen and (min-width: 650px) {
-  /* Headlines */
+  
   .title-txt { font-size: 2.5rem !important; }
   .epilogue-title { font-size: 2.4rem !important; }
   .about-euvee h2,
@@ -1249,7 +1233,7 @@ canvas {
   .ultra-guardian h2,
   .about-professor h2 { font-size: 3rem !important; }
 
-  /* Paragraphs & content */
+  
   .epilogue-content,
   .about-euvee p,
   .temple-of-solace,
@@ -1258,17 +1242,17 @@ canvas {
   .about-professor p,
   p { font-size: 1.1rem !important; line-height: 1.7 !important; }
 
-  /* Images */
+  
   img { max-width: 80% !important; }
 
-  /* Buttons */
+  
   .discover-btn { padding: 1rem 2.5rem !important; font-size: 1.1rem !important; }
 
-  /* Modal */
+  
   .modal-content { max-width: 600px !important; padding: 2rem !important; }
 
 
-  /* Boxes ko 80% width pe lock karo */
+  
   .island-sanctuary,
   .festival-eternal-light,
   .ultra-guardian,
