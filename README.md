@@ -23,7 +23,7 @@ This Story Is Not Just About Pokémon – It’s About Destiny, Bond, Adventure,
 
 ---
 
-## 🌐 Live Preview
+## 🌐 Live view
 
 <p align="center">
   <a href="https://journey-of-professor-eevee.vercel.app/" target="_blank">
