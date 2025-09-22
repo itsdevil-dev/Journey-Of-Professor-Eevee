@@ -6,58 +6,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  background: linear-gradient(135deg, #7fdbda, #70c1b3, #48b1bf, #3a6073);
-  color: #033e5b;
-  font-size: 1rem;
-  display: flex;
-  justify-content: center; 
-  align-items: center;     
-  text-align: center;      
-}
-
-
-
-
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Ubuntu', sans-serif; }
+    html, body { height: 100%; overflow-x: hidden; background: linear-gradient(135deg, #7fdbda, #70c1b3, #48b1bf, #3a6073); color: #033e5b; font-size: 1rem; }
     header { background: transparent; padding: 2vh 1rem; text-align: center; position: relative; }
     header h1 { color: #fff; font-size: clamp(1.5rem, 5vw, 3rem); letter-spacing: 3px; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; animation: float 3s ease-in-out infinite; }
     header h1::after { content: ''; display: block; height: 4px; width: 60%; background: linear-gradient(to right, #00f0ff, #fff, #00f0ff); margin: 12px auto 0; border-radius: 999px; box-shadow: 0 0 8px #00f0ff; }
     @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }/* Wave Animation */
 
 .container { padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-.img-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height:auto;
-}
-
-.vaporeon-img {
-  width: clamp(220px, 50vw, 300px);
-  transition: transform 0.6s ease;
-  filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 16px #00f0ff) drop-shadow(0 0 24px #00f0ff);
-  z-index: 2;
-  cursor: pointer;
-}
+.img-container { position: relative; display: inline-block; }
+.vaporeon-img { position: absolute;h2ransform 0.6s ease; filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 16px #00f0ff) drop-shadow(0 0 24px #00f0ff); z-index: 2; cursor: pointer; }
 .vaporeon-img:hover { transform: scale(1.1) rotate(2deg); }
 .ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple-animation 0.6s linear; background: rgba(255,255,255,0.7); pointer-events: none; }
-@keyframes ripple-animation { to { transform: scale(4); opacity: 0; } }
-
-.card, .extra-section { background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); max-width: 90%; text-align: center; backdrop-filter: blur(10px); border: 2px solid #74c0fc; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+@keyframes ripple-animation { to { transform: scale(4); opacity: 0; }extra-sectionxtra-section { background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); max-width: 90%; text-align: center; backdrop-filter: blur(10px); border: 2px solid #74c0fc; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .extra-section { background: rgba(255, 255, 255, 0.7); border: 2px dashed #48cae4; text-align: left; }
-.card.visible, .extra-section.visible { opacity: 1; transform: translateY(0); }
+.card.visible, .extra-section.visible { transform: translateY(0); opacity: 1; }
 .card h2, .extra-section h3 { margin-bottom: 1rem; color: #0077b6; font-size: clamp(1.3rem, 4vw, 2rem); }
 .card p, .extra-section p, .extra-section ul { line-height: 1.6; font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
 
@@ -196,8 +159,7 @@ html, body {
   <div class="container">
     <div class="img-container">
       <img src="images/vaporeon/vaporeon.png" alt="Vaporeon" class="vaporeon-img" />
-    </div>
-    
+    </div><div class="card fade-in">
   <h2>About Vaporeon</h2>
   <p>Vaporeon is a Water-type Pokémon introduced in Generation I. It evolves from Eevee when exposed to a Water Stone. With its sleek blue body, fish-like tail, and flowing fins, Vaporeon thrives in aquatic environments.</p>
   <p>It can melt into water, making it nearly invisible. Vaporeon is admired for its high HP, strong Water-type moves, and its graceful presence.</p>
@@ -258,13 +220,8 @@ html, body {
     <li>Legends say it guided sailors safely to shore in stormy seas.</li>
   </ul>
 </div>
-
 <button class="redirect-btn fade-in" onclick="window.location.href='main.html'">Explore Eevee Evolutions</button>
-
-  
-
-  <script>
-  
+   transform
     const img = document.querySelector('.vaporeon-img');
     img.addEventListener('click', function(e) {
       const rect = img.getBoundingClientRect();
