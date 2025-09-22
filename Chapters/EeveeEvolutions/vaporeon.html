@@ -15,12 +15,14 @@
 
 .container { padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .img-container { position: relative; display: inline-block; }
-.vaporeon-img { position: absolute; transform: 0.6s eas0.6s ease; filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 16px #00f0ff) drop-shadow(0 0 24px #00f0ff); z-index: 2; cursor: pointer; }
+.vaporeon-img { position: absolute; width: clamp(220px, 50vw, 300px); transition: transform 0.6s ease; filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 16px #00f0ff) drop-shadow(0 0 24px #00f0ff); z-index: 2; cursor: pointer; }
 .vaporeon-img:hover { transform: scale(1.1) rotate(2deg); }
 .ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple-animation 0.6s linear; background: rgba(255,255,255,0.7); pointer-events: none; }
-@keyframes ripple-animation { to { transform: scale(4); opacity: 0; }extra-sectionxtra-section { background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); max-width: 90%; text-align: center; backdrop-filter: blur(10px); border: 2px solid #74c0fc; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+@keyframes ripple-animation { to { transform: scale(4); opacity: 0; } }
+
+.card, .extra-section { background: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); max-width: 90%; text-align: center; backdrop-filter: blur(10px); border: 2px solid #74c0fc; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .extra-section { background: rgba(255, 255, 255, 0.7); border: 2px dashed #48cae4; text-align: left; }
-.card.visible, .extra-section.visible { transform: translateY(0); opacity: 1; }
+.card.visible, .extra-section.visible { opacity: 1; transform: translateY(0); }
 .card h2, .extra-section h3 { margin-bottom: 1rem; color: #0077b6; font-size: clamp(1.3rem, 4vw, 2rem); }
 .card p, .extra-section p, .extra-section ul { line-height: 1.6; font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
 
@@ -220,8 +222,13 @@
     <li>Legends say it guided sailors safely to shore in stormy seas.</li>
   </ul>
 </div>
+
 <button class="redirect-btn fade-in" onclick="window.location.href='main.html'">Explore Eevee Evolutions</button>
-   transform
+
+  
+
+  <script>
+  
     const img = document.querySelector('.vaporeon-img');
     img.addEventListener('click', function(e) {
       const rect = img.getBoundingClientRect();
