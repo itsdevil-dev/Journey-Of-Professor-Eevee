@@ -14,8 +14,21 @@
     @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }/* Wave Animation */
 
 .container { padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-.img-container { position: relative; display: inline-block; }
-.vaporeon-img { width: clamp(220px, 50vw, 300px); transition: transform 0.6s ease; filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 16px #00f0ff) drop-shadow(0 0 24px #00f0ff); z-index: 2; cursor: pointer; }
+.img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:auto;
+}
+
+.vaporeon-img {
+  width: clamp(220px, 50vw, 300px);
+  transition: transform 0.6s ease;
+  filter: drop-shadow(0 0 8px #00f0ff) drop-shadow(0 0 16px #00f0ff) drop-shadow(0 0 24px #00f0ff);
+  z-index: 2;
+  cursor: pointer;
+}
 .vaporeon-img:hover { transform: scale(1.1) rotate(2deg); }
 .ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple-animation 0.6s linear; background: rgba(255,255,255,0.7); pointer-events: none; }
 @keyframes ripple-animation { to { transform: scale(4); opacity: 0; } }
@@ -161,7 +174,8 @@
   <div class="container">
     <div class="img-container">
       <img src="images/vaporeon/vaporeon.png" alt="Vaporeon" class="vaporeon-img" />
-    </div><div class="card fade-in">
+    </div>
+    
   <h2>About Vaporeon</h2>
   <p>Vaporeon is a Water-type Pokémon introduced in Generation I. It evolves from Eevee when exposed to a Water Stone. With its sleek blue body, fish-like tail, and flowing fins, Vaporeon thrives in aquatic environments.</p>
   <p>It can melt into water, making it nearly invisible. Vaporeon is admired for its high HP, strong Water-type moves, and its graceful presence.</p>
