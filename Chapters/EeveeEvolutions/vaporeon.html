@@ -6,8 +6,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Ubuntu', sans-serif; }
-    html, body { height: 100%; overflow-x: hidden; background: linear-gradient(135deg, #7fdbda, #70c1b3, #48b1bf, #3a6073); color: #033e5b; font-size: 1rem; }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #7fdbda, #70c1b3, #48b1bf, #3a6073);
+  color: #033e5b;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;      
+}
+
+
+
+
+
     header { background: transparent; padding: 2vh 1rem; text-align: center; position: relative; }
     header h1 { color: #fff; font-size: clamp(1.5rem, 5vw, 3rem); letter-spacing: 3px; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; animation: float 3s ease-in-out infinite; }
     header h1::after { content: ''; display: block; height: 4px; width: 60%; background: linear-gradient(to right, #00f0ff, #fff, #00f0ff); margin: 12px auto 0; border-radius: 999px; box-shadow: 0 0 8px #00f0ff; }
